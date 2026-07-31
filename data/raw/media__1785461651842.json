@@ -1,0 +1,82 @@
+{
+    "sites": [
+ {
+      "name": "素白白",
+      "type": 3,
+      "api": "SW_SBB",
+      "ext": "SW_SBB"
+    },
+ {
+      "name": "修罗影视",
+      "type": 3,
+      "api": "SW_BDYS",
+      "ext": "SW_BDYS"
+    },
+  {
+      "name": "在线之家",
+      "type": 3,
+      "api": "SW_ZXZJ",
+      "ext": "SW_ZXZJ"
+    },
+ {
+      "name": "欧乐🪜",
+      "type": 3,
+      "api": "SW_OLE",
+      "ext": "SW_OLE"
+    },
+ {
+      "name": "ギリギリ动漫",
+      "type": 3,
+      "api": "SW_DMZF",
+      "ext": "SW_DMZF"
+    },
+  {
+      "name": "韩剧看看",
+      "type": 3,
+      "api": "SW_HJKK",
+      "ext": "SW_HJKK"
+    },
+   {
+      "name": "4K资源",
+      "type": 3,
+      "api": "SW_FKAV",
+      "ext": "SW_FKAV"
+    },
+    {
+      "name": "低端影视",
+      "type": 3,
+      "api": "SW_DDYS",
+      "ext": "SW_DDYS"
+    },
+    {
+      "name": "哔滴影视",
+      "type": 3,
+      "api": "SW_BDYS",
+      "ext": "SW_BDYS"
+    },
+    {
+      "name": "厂长资源",
+      "type": 3,
+      "api": "SW_CZ",
+      "ext": "SW_CZ"
+    },
+    {
+      "name": "星芽短剧",
+      "type": 3,
+      "api": "SW_XY",
+      "ext": "SW_XY"
+    },
+    {
+      "name": "小红影视",
+      "type": 3,
+      "api": "SW_XHYS",
+      "ext": "SW_XHYS"
+    },
+    {
+      "name": "影视天堂",
+      "type": 3,
+      "api": "SW_YSTT",
+      "ext": "SW_YSTT"
+    }
+    ]
+}
