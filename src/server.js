@@ -71,7 +71,7 @@ app.get('/', (req, res) => {
         <h3>使用方法 (SenPlayer):</h3>
         <ol>
           <li>在 Apple TV 打开 <strong>SenPlayer</strong>。</li>
-          <li>进入 <strong>设置 -> 网络订阅 / 资源库 -> 添加 M3U 订阅</strong>。</li>
+          <li>进入 <strong>设置 -> 网络订阅 -> 添加订阅 (M3U)</strong>。</li>
           <li>输入订阅链接：<code>${playlistUrl}</code> 即可导入 301 个源。</li>
         </ol>
 
@@ -83,12 +83,12 @@ app.get('/', (req, res) => {
 });
 
 // Stremio Addon manifest
-app.get(['/manifest.json', '*manifest.json*'], (req, res) => {
+app.get('/manifest.json', (req, res) => {
   res.json(manifest);
 });
 
 // M3U Playlist route for SenPlayer / Infuse / VidHub
-app.get(['/playlist.m3u', '*playlist.m3u*'], (req, res) => {
+app.get('/playlist.m3u', (req, res) => {
   res.setHeader('Content-Type', 'audio/x-mpegurl');
   let m3u = '#EXTM3U\n';
   vodSources.forEach((src) => {
@@ -98,7 +98,7 @@ app.get(['/playlist.m3u', '*playlist.m3u*'], (req, res) => {
 });
 
 // TVBox JSON format route
-app.get(['/tvbox.json', '*tvbox.json*'], (req, res) => {
+app.get('/tvbox.json', (req, res) => {
   res.json({
     sites: vodSources.map(src => ({
       key: src.id,
@@ -151,7 +151,7 @@ app.get('/stream/:type/:id.json', async (req, res) => {
 });
 
 // Sources raw JSON
-app.get(['/sources.json', '*sources.json*'], (req, res) => {
+app.get('/sources.json', (req, res) => {
   res.json(vodSources);
 });
 
