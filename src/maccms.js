@@ -1,16 +1,13 @@
 const axios = require('axios');
 const https = require('https');
 const path = require('path');
-const fs = require('fs');
 
-// Load deduplicated VOD sources
-const sourcesPath = path.join(__dirname, '../data/vod_sources.json');
+// Require JSON directly so bundlers (Vercel/Webpack) bundle it at build time
 let vodSources = [];
-
 try {
-  vodSources = JSON.parse(fs.readFileSync(sourcesPath, 'utf-8'));
+  vodSources = require('../data/vod_sources.json');
 } catch (e) {
-  console.error('Failed to load vod_sources.json:', e.message);
+  console.error('Failed to require vod_sources.json:', e.message);
 }
 
 // HTTPS Agent ignoring self-signed SSL certificate issues
@@ -71,7 +68,6 @@ async function fetchSourceSearch(source, keyword) {
 async function searchVOD(keyword, limitSources = 20) {
   if (!keyword || !keyword.trim()) return [];
 
-  // Pick top sources or randomize sample for variety
   const targetSources = vodSources.slice(0, limitSources);
 
   const searchPromises = targetSources.map(src => fetchSourceSearch(src, keyword.trim()));
@@ -114,7 +110,6 @@ async function searchVOD(keyword, limitSources = 20) {
  * Get recent items for main catalog display
  */
 async function getCatalogItems(type = 'movie', limit = 20) {
-  // Query top 5 reliable sources for catalog recommendations
   const topSources = vodSources.slice(0, 8);
   const promises = topSources.map(async src => {
     try {
@@ -165,7 +160,6 @@ function parseStreamsFromPlayUrl(playUrlStr, sourceName) {
   if (!playUrlStr) return [];
   const streams = [];
 
-  // MacCMS play_url format: "第1集$http://...m3u8#第2集$http://...m3u8$$$第1集$http://..."
   const playFromGroups = playUrlStr.split('$$$');
 
   for (const group of playFromGroups) {
@@ -177,7 +171,6 @@ function parseStreamsFromPlayUrl(playUrlStr, sourceName) {
       let url = parts.length > 1 ? parts[1] : parts[0];
 
       if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
-        // Filter out m3u8 or mp4
         streams.push({
           title: `[${sourceName}] ${title.trim()}`,
           name: sourceName,
