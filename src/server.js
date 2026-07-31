@@ -29,8 +29,9 @@ app.get('/', (req, res) => {
   const protocol = req.protocol;
   const manifestUrl = `${protocol}://${host}/manifest.json`;
   const stremioUrl = manifestUrl.replace(/^http/, 'stremio');
+  const playlistUrl = `${protocol}://${host}/playlist.m3u`;
+  const tvboxUrl = `${protocol}://${host}/tvbox.json`;
   const localIp = getLocalIp();
-  const localManifestUrl = `http://${localIp}:${PORT}/manifest.json`;
 
   res.send(`
     <!DOCTYPE html>
@@ -38,7 +39,7 @@ app.get('/', (req, res) => {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Apple TV Strand / Stremio VOD Addon</title>
+      <title>Apple TV Strand / SenPlayer VOD Addon</title>
       <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
         .card { background: #1e293b; border-radius: 16px; padding: 32px; max-width: 640px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
@@ -53,24 +54,26 @@ app.get('/', (req, res) => {
     </head>
     <body>
       <div class="card">
-        <h1>Apple TV Strand App 中文影视 Addon</h1>
+        <h1>Apple TV Strand / SenPlayer 中文影视 Addon</h1>
         <div class="badge">已合并去重 ${vodSources.length} 个 VOD 资源接口</div>
-        <p>本 Addon 兼容 Apple TV Strand App、Stremio 及相关支持 Stremio 协议的播放器。</p>
+        <p>本 Addon 支持 Apple TV Strand App、SenPlayer、VidHub、Stremio 等多种播放器。</p>
         
-        <h3>1. 当前访问地址 Manifest URL：</h3>
+        <h3>1. Strand App / Stremio (Manifest URL)：</h3>
         <div class="url-box">${manifestUrl}</div>
 
-        <h3>2. 局域网 Apple TV 专用 Manifest URL：</h3>
-        <div class="url-box">${localManifestUrl}</div>
+        <h3>2. SenPlayer / VidHub / Infuse (M3U 订阅 URL)：</h3>
+        <div class="url-box">${playlistUrl}</div>
+
+        <h3>3. TVBox / CatVod 接口 URL：</h3>
+        <div class="url-box">${tvboxUrl}</div>
 
         <a class="btn" href="${stremioUrl}">一键添加到 Stremio / Strand App</a>
 
-        <h3>使用方法 (Apple TV Strand App):</h3>
+        <h3>使用方法 (SenPlayer):</h3>
         <ol>
-          <li>在 Apple TV 打开 <strong>Strand App</strong>。</li>
-          <li>进入 <code>Settings -> Addons (插件)</code>。</li>
-          <li>输入上面的 Manifest URL 链接并确认安装。</li>
-          <li>即可在 Strand 中搜索并播放 301 个源的中文影视资源。</li>
+          <li>在 Apple TV 打开 <strong>SenPlayer</strong>。</li>
+          <li>点击 <strong>添加资源 / 媒体源 -> M3U 订阅 / 播放列表</strong>。</li>
+          <li>输入订阅链接：<code>${playlistUrl}</code> 即可导入 301 个源。</li>
         </ol>
 
         <p><a href="/sources.json" style="color: #38bdf8;">查看合并去重后的 301 个源列表 (sources.json)</a></p>
@@ -83,6 +86,31 @@ app.get('/', (req, res) => {
 // Stremio Addon manifest
 app.get('/manifest.json', (req, res) => {
   res.json(manifest);
+});
+
+// M3U Playlist route for SenPlayer / Infuse / VidHub
+app.get('/playlist.m3u', (req, res) => {
+  res.setHeader('Content-Type', 'audio/x-mpegurl');
+  let m3u = '#EXTM3U\n';
+  vodSources.forEach((src) => {
+    m3u += `#EXTINF:-1 group-title="中文VOD影视源", ${src.name}\n${src.api}\n`;
+  });
+  res.send(m3u);
+});
+
+// TVBox JSON format route
+app.get('/tvbox.json', (req, res) => {
+  res.json({
+    sites: vodSources.map(src => ({
+      key: src.id,
+      name: src.name,
+      type: src.type || 1,
+      api: src.api,
+      searchable: 1,
+      quickSearch: 1,
+      filterable: 1
+    }))
+  });
 });
 
 // Catalog route
@@ -138,9 +166,9 @@ app.get('/sources.json', (req, res) => {
 app.listen(PORT, () => {
   const localIp = getLocalIp();
   console.log(`\n==================================================`);
-  console.log(`🚀 Strand VOD Addon Server running!`);
-  console.log(`📺 Local Mac URL:      http://localhost:${PORT}/manifest.json`);
-  console.log(`📺 Apple TV LAN URL:   http://${localIp}:${PORT}/manifest.json`);
+  console.log(`🚀 VOD Addon Server running!`);
+  console.log(`📺 Manifest URL:       http://${localIp}:${PORT}/manifest.json`);
+  console.log(`📺 SenPlayer M3U URL:   http://${localIp}:${PORT}/playlist.m3u`);
   console.log(`==================================================\n`);
 });
 
