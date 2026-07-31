@@ -23,9 +23,9 @@ function getLocalIp() {
 app.use(cors());
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Universal route handler for Vercel Serverless & Express compatibility
+// Universal route handler checking req.originalUrl for Vercel Serverless compatibility
 app.use(async (req, res, next) => {
-  const url = req.url || '';
+  const url = req.originalUrl || req.url || '';
 
   if (url.includes('manifest.json')) {
     return res.json(manifest);
@@ -147,7 +147,7 @@ app.use(async (req, res, next) => {
           <h3>使用方法 (SenPlayer):</h3>
           <ol>
             <li>在 Apple TV 打开 <strong>SenPlayer</strong>。</li>
-            <li>进入 <strong>设置 -> 网络订阅 / 资源库 -> 添加 M3U / 播放列表</strong>。</li>
+            <li>进入 <strong>设置 -> 媒体源 / 资源库 -> 添加 M3U / 播放列表</strong>。</li>
             <li>输入订阅链接：<code>${playlistUrl}</code> 即可导入 301 个源。</li>
           </ol>
 
