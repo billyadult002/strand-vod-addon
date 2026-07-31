@@ -1,11 +1,24 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const os = require('os');
 const { manifest, handleCatalog, handleMeta, handleStream } = require('./addon');
 const { vodSources } = require('./maccms');
 
 const app = express();
 const PORT = process.env.PORT || 7000;
+
+function getLocalIp() {
+  const interfaces = os.networkInterfaces();
+  for (const name of Object.keys(interfaces)) {
+    for (const iface of interfaces[name]) {
+      if (iface.family === 'IPv4' && !iface.internal) {
+        return iface.address;
+      }
+    }
+  }
+  return 'localhost';
+}
 
 app.use(cors());
 app.use(express.static(path.join(__dirname, '../public')));
@@ -16,6 +29,8 @@ app.get('/', (req, res) => {
   const protocol = req.protocol;
   const manifestUrl = `${protocol}://${host}/manifest.json`;
   const stremioUrl = manifestUrl.replace(/^http/, 'stremio');
+  const localIp = getLocalIp();
+  const localManifestUrl = `http://${localIp}:${PORT}/manifest.json`;
 
   res.send(`
     <!DOCTYPE html>
@@ -29,7 +44,7 @@ app.get('/', (req, res) => {
         .card { background: #1e293b; border-radius: 16px; padding: 32px; max-width: 640px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
         h1 { color: #38bdf8; font-size: 1.8rem; margin-top: 0; }
         .badge { background: #0284c7; color: white; padding: 4px 12px; border-radius: 9999px; font-size: 0.85rem; display: inline-block; margin-bottom: 16px; }
-        .url-box { background: #0f172a; border: 1px solid #334155; padding: 12px 16px; border-radius: 8px; font-family: monospace; word-break: break-all; color: #a5f3fc; font-size: 0.95rem; margin: 16px 0; }
+        .url-box { background: #0f172a; border: 1px solid #334155; padding: 12px 16px; border-radius: 8px; font-family: monospace; word-break: break-all; color: #a5f3fc; font-size: 0.95rem; margin: 12px 0; }
         .btn { display: inline-block; background: #0284c7; color: white; font-weight: 600; text-decoration: none; padding: 12px 24px; border-radius: 8px; margin-top: 12px; }
         .btn:hover { background: #0369a1; }
         ol { padding-left: 20px; line-height: 1.7; color: #cbd5e1; }
@@ -42,8 +57,11 @@ app.get('/', (req, res) => {
         <div class="badge">已合并去重 ${vodSources.length} 个 VOD 资源接口</div>
         <p>本 Addon 兼容 Apple TV Strand App、Stremio 及相关支持 Stremio 协议的播放器。</p>
         
-        <h3>Manifest 配置链接 (Apple TV / Stremio)：</h3>
+        <h3>1. 当前访问地址 Manifest URL：</h3>
         <div class="url-box">${manifestUrl}</div>
+
+        <h3>2. 局域网 Apple TV 专用 Manifest URL：</h3>
+        <div class="url-box">${localManifestUrl}</div>
 
         <a class="btn" href="${stremioUrl}">一键添加到 Stremio / Strand App</a>
 
@@ -51,8 +69,8 @@ app.get('/', (req, res) => {
         <ol>
           <li>在 Apple TV 打开 <strong>Strand App</strong>。</li>
           <li>进入 <code>Settings -> Addons (插件)</code>。</li>
-          <li>粘贴上面的 Manifest URL 链接并确认安装。</li>
-          <li>即可在 Strand 中搜索并播放海量中文影视资源。</li>
+          <li>输入上面的 Manifest URL 链接并确认安装。</li>
+          <li>即可在 Strand 中搜索并播放 301 个源的中文影视资源。</li>
         </ol>
 
         <p><a href="/sources.json" style="color: #38bdf8;">查看合并去重后的 301 个源列表 (sources.json)</a></p>
@@ -118,7 +136,12 @@ app.get('/sources.json', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Strand VOD Addon Server running on http://localhost:${PORT}`);
+  const localIp = getLocalIp();
+  console.log(`\n==================================================`);
+  console.log(`🚀 Strand VOD Addon Server running!`);
+  console.log(`📺 Local Mac URL:      http://localhost:${PORT}/manifest.json`);
+  console.log(`📺 Apple TV LAN URL:   http://${localIp}:${PORT}/manifest.json`);
+  console.log(`==================================================\n`);
 });
 
 module.exports = app;
