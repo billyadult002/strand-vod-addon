@@ -1,0 +1,27 @@
+{
+  "name": "strand-vod-addon",
+  "version": "1.0.0",
+  "description": "Apple TV Strand App & Stremio Chinese Multi-Source VOD Addon",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node tests/test_addon.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "keywords": [
+    "appletv",
+    "strand",
+    "stremio",
+    "stremio-addon",
+    "maccms",
+    "tvbox",
+    "vod"
+  ],
+  "author": "billyadult002",
+  "license": "MIT"
+}

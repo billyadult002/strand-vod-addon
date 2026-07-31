@@ -1,0 +1,124 @@
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+const { manifest, handleCatalog, handleMeta, handleStream } = require('./addon');
+const { vodSources } = require('./maccms');
+
+const app = express();
+const PORT = process.env.PORT || 7000;
+
+app.use(cors());
+app.use(express.static(path.join(__dirname, '../public')));
+
+// Root home page & setup guide
+app.get('/', (req, res) => {
+  const host = req.get('host');
+  const protocol = req.protocol;
+  const manifestUrl = `${protocol}://${host}/manifest.json`;
+  const stremioUrl = manifestUrl.replace(/^http/, 'stremio');
+
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Apple TV Strand / Stremio VOD Addon</title>
+      <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
+        .card { background: #1e293b; border-radius: 16px; padding: 32px; max-width: 640px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        h1 { color: #38bdf8; font-size: 1.8rem; margin-top: 0; }
+        .badge { background: #0284c7; color: white; padding: 4px 12px; border-radius: 9999px; font-size: 0.85rem; display: inline-block; margin-bottom: 16px; }
+        .url-box { background: #0f172a; border: 1px solid #334155; padding: 12px 16px; border-radius: 8px; font-family: monospace; word-break: break-all; color: #a5f3fc; font-size: 0.95rem; margin: 16px 0; }
+        .btn { display: inline-block; background: #0284c7; color: white; font-weight: 600; text-decoration: none; padding: 12px 24px; border-radius: 8px; margin-top: 12px; }
+        .btn:hover { background: #0369a1; }
+        ol { padding-left: 20px; line-height: 1.7; color: #cbd5e1; }
+        code { background: #334155; padding: 2px 6px; border-radius: 4px; color: #f1f5f9; }
+      </style>
+    </head>
+    <body>
+      <div class="card">
+        <h1>Apple TV Strand App 中文影视 Addon</h1>
+        <div class="badge">已合并去重 ${vodSources.length} 个 VOD 资源接口</div>
+        <p>本 Addon 兼容 Apple TV Strand App、Stremio 及相关支持 Stremio 协议的播放器。</p>
+        
+        <h3>Manifest 配置链接 (Apple TV / Stremio)：</h3>
+        <div class="url-box">${manifestUrl}</div>
+
+        <a class="btn" href="${stremioUrl}">一键添加到 Stremio / Strand App</a>
+
+        <h3>使用方法 (Apple TV Strand App):</h3>
+        <ol>
+          <li>在 Apple TV 打开 <strong>Strand App</strong>。</li>
+          <li>进入 <code>Settings -> Addons (插件)</code>。</li>
+          <li>粘贴上面的 Manifest URL 链接并确认安装。</li>
+          <li>即可在 Strand 中搜索并播放海量中文影视资源。</li>
+        </ol>
+
+        <p><a href="/sources.json" style="color: #38bdf8;">查看合并去重后的 301 个源列表 (sources.json)</a></p>
+      </div>
+    </body>
+    </html>
+  `);
+});
+
+// Stremio Addon manifest
+app.get('/manifest.json', (req, res) => {
+  res.json(manifest);
+});
+
+// Catalog route
+app.get('/catalog/:type/:id.json', async (req, res) => {
+  try {
+    const result = await handleCatalog(req.params.type, req.params.id);
+    res.json(result);
+  } catch (e) {
+    res.json({ metas: [] });
+  }
+});
+
+app.get('/catalog/:type/:id/:extra.json', async (req, res) => {
+  try {
+    const extraStr = req.params.extra || '';
+    const extraParams = {};
+    if (extraStr.includes('search=')) {
+      const match = extraStr.match(/search=([^&]+)/);
+      if (match) extraParams.search = decodeURIComponent(match[1]);
+    }
+    const result = await handleCatalog(req.params.type, req.params.id, extraParams);
+    res.json(result);
+  } catch (e) {
+    res.json({ metas: [] });
+  }
+});
+
+// Meta route
+app.get('/meta/:type/:id.json', async (req, res) => {
+  try {
+    const result = await handleMeta(req.params.type, req.params.id);
+    res.json(result);
+  } catch (e) {
+    res.json({ meta: { id: req.params.id, type: req.params.type, name: "未知" } });
+  }
+});
+
+// Stream route
+app.get('/stream/:type/:id.json', async (req, res) => {
+  try {
+    const result = await handleStream(req.params.type, req.params.id);
+    res.json(result);
+  } catch (e) {
+    res.json({ streams: [] });
+  }
+});
+
+// Sources raw JSON
+app.get('/sources.json', (req, res) => {
+  res.json(vodSources);
+});
+
+app.listen(PORT, () => {
+  console.log(`Strand VOD Addon Server running on http://localhost:${PORT}`);
+});
+
+module.exports = app;
