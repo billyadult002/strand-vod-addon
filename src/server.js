@@ -4,11 +4,7 @@ const path = require('path');
 const os = require('os');
 const { manifest, handleCatalog, handleMeta, handleStream } = require('./addon');
 const { vodSources } = require('./maccms');
-
-let top50Hub = [];
-try {
-  top50Hub = require('../data/streamingsiteshub_top50.json');
-} catch (e) {}
+const top50Hub = require('./data_top50.json');
 
 const app = express();
 const PORT = process.env.PORT || 7000;

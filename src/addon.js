@@ -1,12 +1,6 @@
 const { vodSources, searchVOD, getCatalogItems, parseStreamsFromPlayUrl } = require('./maccms');
 const path = require('path');
-
-let top50Hub = [];
-try {
-  top50Hub = require('../data/streamingsiteshub_top50.json');
-} catch (e) {
-  console.error('Failed to load streamingsiteshub_top50.json:', e.message);
-}
+const top50Hub = require('./data_top50.json');
 
 const manifest = {
   id: "org.strand.maccms.vod",
