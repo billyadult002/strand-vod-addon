@@ -1,13 +1,21 @@
 const { vodSources, searchVOD, getCatalogItems, parseStreamsFromPlayUrl } = require('./maccms');
+const path = require('path');
+
+let top50Hub = [];
+try {
+  top50Hub = require('../data/streamingsiteshub_top50.json');
+} catch (e) {
+  console.error('Failed to load streamingsiteshub_top50.json:', e.message);
+}
 
 const manifest = {
   id: "org.strand.maccms.vod",
-  version: "1.0.0",
-  name: "中文聚合影视 (Strand VOD Addon)",
-  description: "适用于 Apple TV Strand / Stremio 的中文 301+ 影视聚合 Addon",
+  version: "2.0.0",
+  name: "中文影视 & 全球Top50聚合 (Strand VOD Addon)",
+  description: "适用于 Apple TV Strand App / Stremio 的影视 Addon，整合 301 个中文 VOD 源及 StreamingSitesHub 前 50 精选免费影视/动漫/体育站点",
   logo: "https://v.strem.io/images/stremio-logo-white.png",
   resources: ["catalog", "meta", "stream"],
-  types: ["movie", "series"],
+  types: ["movie", "series", "anime"],
   catalogs: [
     {
       type: "movie",
@@ -26,9 +34,17 @@ const manifest = {
         { name: "search", isRequired: false },
         { name: "skip", isRequired: false }
       ]
+    },
+    {
+      type: "movie",
+      id: "hub_top50",
+      name: "StreamingSitesHub Top 50 站点",
+      extra: [
+        { name: "search", isRequired: false }
+      ]
     }
   ],
-  idPrefixes: ["vod:"]
+  idPrefixes: ["vod:", "hub:"]
 };
 
 /**
@@ -36,6 +52,18 @@ const manifest = {
  */
 async function handleCatalog(type, id, extra = {}) {
   const searchQuery = extra.search;
+
+  if (id === 'hub_top50') {
+    const metas = top50Hub.map(site => ({
+      id: `hub:${site.rank}`,
+      type: "movie",
+      name: `#${site.rank} ${site.name}`,
+      poster: `https://www.google.com/s2/favicons?domain=${site.domain}&sz=128`,
+      description: `【StreamingSitesHub Top 50 优质流媒体站】域名: ${site.domain} | 直达地址: ${site.url}`,
+      websiteUrl: site.url
+    }));
+    return { metas };
+  }
 
   if (searchQuery) {
     const searchResults = await searchVOD(searchQuery);
@@ -69,6 +97,21 @@ async function handleCatalog(type, id, extra = {}) {
  * Meta Handler
  */
 async function handleMeta(type, id) {
+  if (id.startsWith('hub:')) {
+    const rank = parseInt(id.replace('hub:', ''));
+    const site = top50Hub.find(s => s.rank === rank) || top50Hub[0];
+    return {
+      meta: {
+        id: `hub:${site.rank}`,
+        type: "movie",
+        name: `#${site.rank} ${site.name}`,
+        poster: `https://www.google.com/s2/favicons?domain=${site.domain}&sz=128`,
+        background: `https://www.google.com/s2/favicons?domain=${site.domain}&sz=128`,
+        description: `【StreamingSitesHub Top 50 流媒体站】\n名称: ${site.name}\n域名: ${site.domain}\n直达地址: ${site.url}`
+      }
+    };
+  }
+
   const rawTitle = decodeURIComponent(id.replace(/^vod:/, ''));
   const results = await searchVOD(rawTitle, 5);
 
@@ -103,8 +146,21 @@ async function handleMeta(type, id) {
  * Stream Handler
  */
 async function handleStream(type, id) {
+  if (id.startsWith('hub:')) {
+    const rank = parseInt(id.replace('hub:', ''));
+    const site = top50Hub.find(s => s.rank === rank) || top50Hub[0];
+    return {
+      streams: [
+        {
+          title: `[${site.name}] 访问主页: ${site.domain}`,
+          name: site.name,
+          externalUrl: site.url
+        }
+      ]
+    };
+  }
+
   const rawTitle = decodeURIComponent(id.replace(/^vod:/, ''));
-  // Search title across top VOD sources to fetch streams
   const results = await searchVOD(rawTitle, 25);
 
   const streams = [];
