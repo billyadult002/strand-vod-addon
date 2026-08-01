@@ -104,7 +104,11 @@ app.get('/manifest.json', (req, res) => {
 });
 
 // StreamingSitesHub Top 50 JSON route
-app.get(['/top50.json', '/top50'], (req, res) => {
+app.get('/top50.json', (req, res) => {
+  res.json(top50Hub);
+});
+
+app.get('/top50', (req, res) => {
   res.json(top50Hub);
 });
 
@@ -137,7 +141,18 @@ app.get('/tvbox.json', (req, res) => {
 });
 
 // Catalog route
-app.get(['/catalog/:type/:id.json', '/catalog/:type/:id/:extra.json'], async (req, res) => {
+app.get('/catalog/:type/:id.json', async (req, res) => {
+  try {
+    const type = req.params.type || 'movie';
+    const id = req.params.id || 'maccms_movie';
+    const result = await handleCatalog(type, id);
+    res.json(result);
+  } catch (e) {
+    res.json({ metas: [] });
+  }
+});
+
+app.get('/catalog/:type/:id/:extra.json', async (req, res) => {
   try {
     const type = req.params.type || 'movie';
     const id = req.params.id || 'maccms_movie';
