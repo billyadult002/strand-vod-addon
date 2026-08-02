@@ -82,6 +82,12 @@ async function main() {
 
         for (const item of list) {
           if (!item.vod_name || !item.vod_play_url) continue;
+          
+          // Filter by year: only 2024, 2025, 2026
+          const year = item.vod_year ? item.vod_year.toString() : '';
+          if (year !== '2024' && year !== '2025' && year !== '2026') {
+            continue;
+          }
 
           const sections = item.vod_play_url.split('$$$');
           for (const sec of sections) {
@@ -98,7 +104,24 @@ async function main() {
                   }
 
                   const title = `[${src.name}] ${item.vod_name} ${epTitle !== item.vod_name ? epTitle : ''}`.trim().replace(/,/g, ' ');
-                  const group = item.type_name || src.group || '全网热播';
+                  const rawGroup = item.type_name || src.group || '全网热播';
+                  
+                  // Category Mapping
+                  let level1 = "其他";
+                  if (rawGroup.includes('电影') || rawGroup.includes('片') && !rawGroup.includes('纪录片')) level1 = "电影";
+                  if (rawGroup.includes('剧')) level1 = "电视剧";
+                  if (rawGroup.includes('综艺')) level1 = "综艺";
+                  if (rawGroup.includes('纪录片') || rawGroup.includes('记录')) level1 = "纪录片";
+
+                  let level2 = "其他";
+                  if (rawGroup.includes('欧') || rawGroup.includes('美')) level2 = "欧美";
+                  else if (rawGroup.includes('日')) level2 = "日本";
+                  else if (rawGroup.includes('韩')) level2 = "韩国";
+                  else if (rawGroup.includes('台')) level2 = "台湾";
+                  else if (rawGroup.includes('港')) level2 = "香港";
+                  else if (rawGroup.includes('亚') || rawGroup.includes('泰') || rawGroup.includes('新马')) level2 = "亚洲其他";
+
+                  const group = `${level1} - ${level2}`;
                   const logo = item.vod_pic || '';
 
                   items.push(`#EXTINF:-1 tvg-id="${item.vod_id}" tvg-name="${title}" tvg-logo="${logo}" group-title="${group}",${title}`);
