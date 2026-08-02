@@ -2,24 +2,40 @@ const express = require('express');
 const cors = require('cors');
 const { manifest, handleCatalog, handleMeta, handleStream } = require('../src/addon');
 const { vodSources } = require('../src/maccms');
-const top50Hub = require('../src/data_top50.json');
+
+let top50Hub = [];
+try {
+  top50Hub = require('../src/data_top50.json');
+} catch (e) {
+  top50Hub = [];
+}
 
 const app = express();
 app.use(cors());
 
-// Universal Playlist generator
+// Universal Playlist generator with bulletproof try/catch
 const sendPlaylist = (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-  res.setHeader('Content-Type', 'application/vnd.apple.mpegurl; charset=utf-8');
-  let m3u = '#EXTM3U\n';
-  vodSources.forEach((src) => {
-    m3u += `#EXTINF:-1 group-title="中文VOD影视源", ${src.name}\n${src.api}\n`;
-  });
-  top50Hub.forEach((site) => {
-    m3u += `#EXTINF:-1 group-title="StreamingSitesHub Top 50", #${site.rank} ${site.name}\n${site.url}\n`;
-  });
-  res.status(200).send(m3u);
+  try {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.setHeader('Content-Type', 'application/vnd.apple.mpegurl; charset=utf-8');
+    
+    let m3u = '#EXTM3U\n';
+    if (Array.isArray(vodSources)) {
+      vodSources.forEach((src) => {
+        m3u += `#EXTINF:-1 group-title="中文VOD影视源", ${src.name}\n${src.api}\n`;
+      });
+    }
+    if (Array.isArray(top50Hub)) {
+      top50Hub.forEach((site) => {
+        m3u += `#EXTINF:-1 group-title="StreamingSitesHub Top 50", #${site.rank || ''} ${site.name || ''}\n${site.url || ''}\n`;
+      });
+    }
+    return res.status(200).send(m3u);
+  } catch (err) {
+    res.setHeader('Content-Type', 'application/vnd.apple.mpegurl; charset=utf-8');
+    return res.status(200).send('#EXTM3U\n#EXTINF:-1, Billy VOD Addon\nhttps://strand-vod-billy.vercel.app/manifest.json\n');
+  }
 };
 
 // TOP-LEVEL INTERCEPTOR: Catch ALL playlist requests & non-API routes FIRST
