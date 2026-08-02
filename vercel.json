@@ -13,23 +13,23 @@
       "dest": "/api/top50.js"
     },
     {
-      "src": "/playlist.m3u",
-      "dest": "/api/playlist.js"
-    },
-    {
       "src": "/playlist.m3u8",
-      "dest": "/api/playlist.js"
+      "dest": "/api/playlist.m3u8.js"
     },
     {
       "src": "/live.m3u8",
-      "dest": "/api/playlist.js"
+      "dest": "/api/playlist.m3u8.js"
     },
     {
       "src": "/tv.m3u8",
-      "dest": "/api/playlist.js"
+      "dest": "/api/playlist.m3u8.js"
     },
     {
       "src": "/channels.m3u8",
+      "dest": "/api/playlist.m3u8.js"
+    },
+    {
+      "src": "/playlist.m3u",
       "dest": "/api/playlist.js"
     },
     {
