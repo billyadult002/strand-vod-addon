@@ -1,8 +1,8 @@
 {
-  "id": "org.strand.vod.billy.fulltop100",
-  "version": "3.0.0",
-  "name": "gz.app / nqjc.net / fluxtv / dulo / Top 100 & MacCMS VOD",
-  "description": "Strand VOD Addon containing StreamingSitesHub Top 100 + gz.app, nqjc.net, fluxtv.cc, dulo.cx & MacCMS VOD sources",
+  "id": "org.strand.vod.billy.ultimate",
+  "version": "4.0.0",
+  "name": "NightFlix / AniSuge / ZStream / 瓜子影视 / FluxTV / Strand Addon",
+  "description": "Merged NightFlix, AniSuge, ZStream, StreamM4U, FlixBaba, CornClick, gz.app, nqjc.net, fluxtv.cc, dulo.cx & MacCMS sources",
   "resources": [
     "catalog",
     "stream",
@@ -15,11 +15,26 @@
   "catalogs": [
     {
       "type": "movie",
-      "id": "top100_all",
-      "name": "Top 100 & All VOD Sources"
+      "id": "movies",
+      "name": "电影库 (Movies)"
+    },
+    {
+      "type": "series",
+      "id": "series",
+      "name": "电视剧库 (TV Series)"
+    },
+    {
+      "type": "anime",
+      "id": "anime",
+      "name": "动漫库 (Anime)"
+    },
+    {
+      "type": "show",
+      "id": "show",
+      "name": "综艺库 (Variety)"
     }
   ],
   "idPrefixes": [
-    "top100_"
+    "vod_"
   ]
 }
