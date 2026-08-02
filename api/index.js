@@ -8,20 +8,20 @@ const app = express();
 
 app.use(cors());
 
-// Universal handler matching all paths
-app.get('*', async (req, res) => {
-  const url = req.url || req.originalUrl || req.path || '';
+// Master middleware running before express routing
+app.use(async (req, res, next) => {
+  const rawUrl = (req.originalUrl || req.url || req.headers['x-matched-path'] || '').toLowerCase();
 
   // 1. Manifest
-  if (url.includes('manifest')) {
+  if (rawUrl.includes('manifest')) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.setHeader('Content-Type', 'application/json');
-    return res.json(manifest);
+    return res.status(200).json(manifest);
   }
 
-  // 2. M3U / M3U8 Playlist
-  if (url.includes('playlist') || url.includes('m3u') || url.includes('live') || url.includes('channels')) {
+  // 2. Playlist (.m3u & .m3u8)
+  if (rawUrl.includes('playlist') || rawUrl.includes('m3u') || rawUrl.includes('live') || rawUrl.includes('channels')) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.setHeader('Content-Type', 'application/vnd.apple.mpegurl; charset=utf-8');
@@ -36,15 +36,15 @@ app.get('*', async (req, res) => {
   }
 
   // 3. Top 50
-  if (url.includes('top50')) {
+  if (rawUrl.includes('top50')) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    return res.json(top50Hub);
+    return res.status(200).json(top50Hub);
   }
 
   // 4. TVBox
-  if (url.includes('tvbox')) {
+  if (rawUrl.includes('tvbox')) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    return res.json({
+    return res.status(200).json({
       sites: vodSources.map(src => ({
         key: src.id,
         name: src.name,
@@ -58,15 +58,15 @@ app.get('*', async (req, res) => {
   }
 
   // 5. Sources
-  if (url.includes('sources')) {
+  if (rawUrl.includes('sources')) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    return res.json(vodSources);
+    return res.status(200).json(vodSources);
   }
 
   // 6. Catalog
-  if (url.includes('/catalog/')) {
+  if (rawUrl.includes('/catalog/')) {
     try {
-      const parts = url.split('/catalog/')[1].split('/');
+      const parts = rawUrl.split('/catalog/')[1].split('/');
       const type = parts[0] || 'movie';
       const idStr = parts[1] || 'billy_maccms_movie.json';
       const id = idStr.replace('.json', '');
@@ -80,41 +80,45 @@ app.get('*', async (req, res) => {
       }
       const result = await handleCatalog(type, id, extraParams);
       res.setHeader('Access-Control-Allow-Origin', '*');
-      return res.json(result);
+      return res.status(200).json(result);
     } catch (e) {
-      return res.json({ metas: [] });
+      return res.status(200).json({ metas: [] });
     }
   }
 
   // 7. Meta
-  if (url.includes('/meta/')) {
+  if (rawUrl.includes('/meta/')) {
     try {
-      const parts = url.split('/meta/')[1].split('/');
+      const parts = rawUrl.split('/meta/')[1].split('/');
       const type = parts[0] || 'movie';
       const id = (parts[1] || '').replace('.json', '');
       const result = await handleMeta(type, id);
       res.setHeader('Access-Control-Allow-Origin', '*');
-      return res.json(result);
+      return res.status(200).json(result);
     } catch (e) {
-      return res.json({ meta: { id: "unknown", type: "movie", name: "未知" } });
+      return res.status(200).json({ meta: { id: "unknown", type: "movie", name: "未知" } });
     }
   }
 
   // 8. Stream
-  if (url.includes('/stream/')) {
+  if (rawUrl.includes('/stream/')) {
     try {
-      const parts = url.split('/stream/')[1].split('/');
+      const parts = rawUrl.split('/stream/')[1].split('/');
       const type = parts[0] || 'movie';
       const id = (parts[1] || '').replace('.json', '');
       const result = await handleStream(type, id);
       res.setHeader('Access-Control-Allow-Origin', '*');
-      return res.json(result);
+      return res.status(200).json(result);
     } catch (e) {
-      return res.json({ streams: [] });
+      return res.status(200).json({ streams: [] });
     }
   }
 
-  // 9. Root / Default HTML
+  next();
+});
+
+// Root home page
+app.get('*', (req, res) => {
   const host = req.get('host');
   const protocol = req.protocol;
   const manifestUrl = `${protocol}://${host}/manifest.json`;
