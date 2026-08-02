@@ -23,5 +23,6 @@ module.exports = (req, res) => {
       m3u += `#EXTINF:-1 group-title="StreamingSitesHub Top 50", #${site.rank || ''} ${site.name || ''}\n${site.url || ''}\n`;
     });
   }
-  return res.status(200).send(m3u);
+  res.statusCode = 200;
+  return res.end(m3u);
 };
