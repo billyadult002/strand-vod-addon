@@ -1,13 +1,20 @@
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
 const os = require('os');
 const { manifest, handleCatalog, handleMeta, handleStream } = require('./addon');
 const { vodSources } = require('./maccms');
-const top50Hub = require('./data_top50.json');
+
+let top50Hub = [];
+try {
+  top50Hub = require('./data_top50.json');
+} catch (e) {
+  top50Hub = [];
+}
 
 const app = express();
 const PORT = process.env.PORT || 7000;
+
+app.use(cors());
 
 function getLocalIp() {
   const interfaces = os.networkInterfaces();
@@ -21,18 +28,16 @@ function getLocalIp() {
   return 'localhost';
 }
 
-app.use(cors());
-app.use(express.static(path.join(__dirname, '../public')));
-
-// Root home page
+// Homepage / Landing page UI
 app.get('/', (req, res) => {
-  const host = req.get('host');
-  const protocol = req.protocol;
-  const manifestUrl = `${protocol}://${host}/manifest.json`;
-  const stremioUrl = manifestUrl.replace(/^http/, 'stremio');
-  const playlistUrl = `${protocol}://${host}/playlist.m3u8`;
-  const tvboxUrl = `${protocol}://${host}/tvbox.json`;
-  const top50Url = `${protocol}://${host}/top50.json`;
+  const host = req.get('host') || 'strand-vod-billy.vercel.app';
+  const protocol = req.protocol || 'https';
+  const baseUrl = `${protocol}://${host}`;
+  const manifestUrl = `${baseUrl}/manifest.json`;
+  const playlistUrl = `${baseUrl}/playlist.m3u8`;
+  const tvboxUrl = `${baseUrl}/tvbox.json`;
+  const top50Url = `${baseUrl}/top50.json`;
+  const stremioUrl = `stremio://${host}/manifest.json`;
 
   res.send(`
     <!DOCTYPE html>
@@ -95,18 +100,32 @@ app.get('/', (req, res) => {
 });
 
 // Stremio Addon manifest
-app.get(['/manifest.json', '/billy-manifest.json'], (req, res) => {
+app.get(['/manifest.json', '/billy-manifest.json', '/api/manifest.json', '/api/manifest', '/api/billy-manifest.json'], (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.json(manifest);
 });
 
 // StreamingSitesHub Top 50 JSON route
-app.get(['/top50.json', '/top50'], (req, res) => {
+app.get(['/top50.json', '/top50', '/api/top50.json', '/api/top50'], (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.json(top50Hub);
 });
 
 // M3U & M3U8 Playlist route for SenPlayer / Infuse / VidHub
-app.get(['/playlist.m3u8', '/playlist.m3u', '/live.m3u8', '/tv.m3u8', '/channels.m3u8'], (req, res) => {
+app.get([
+  '/playlist.m3u8',
+  '/playlist.m3u',
+  '/playlist',
+  '/live.m3u8',
+  '/tv.m3u8',
+  '/channels.m3u8',
+  '/api/playlist',
+  '/api/playlist.m3u',
+  '/api/playlist.m3u8',
+  '/api/live.m3u8',
+  '/api/tv.m3u8'
+], (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.setHeader('Content-Type', 'application/vnd.apple.mpegurl; charset=utf-8');
@@ -121,7 +140,8 @@ app.get(['/playlist.m3u8', '/playlist.m3u', '/live.m3u8', '/tv.m3u8', '/channels
 });
 
 // TVBox JSON format route
-app.get('/tvbox.json', (req, res) => {
+app.get(['/tvbox.json', '/api/tvbox.json', '/api/tvbox'], (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.json({
     sites: vodSources.map(src => ({
       key: src.id,
@@ -136,18 +156,19 @@ app.get('/tvbox.json', (req, res) => {
 });
 
 // Catalog route
-app.get('/catalog/:type/:id.json', async (req, res) => {
+app.get(['/catalog/:type/:id.json', '/api/catalog/:type/:id.json'], async (req, res) => {
   try {
     const type = req.params.type || 'movie';
     const id = req.params.id || 'billy_maccms_movie';
     const result = await handleCatalog(type, id);
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.json(result);
   } catch (e) {
     res.json({ metas: [] });
   }
 });
 
-app.get('/catalog/:type/:id/:extra.json', async (req, res) => {
+app.get(['/catalog/:type/:id/:extra.json', '/api/catalog/:type/:id/:extra.json'], async (req, res) => {
   try {
     const type = req.params.type || 'movie';
     const id = req.params.id || 'billy_maccms_movie';
@@ -158,6 +179,7 @@ app.get('/catalog/:type/:id/:extra.json', async (req, res) => {
       if (match) extraParams.search = decodeURIComponent(match[1]);
     }
     const result = await handleCatalog(type, id, extraParams);
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.json(result);
   } catch (e) {
     res.json({ metas: [] });
@@ -165,9 +187,10 @@ app.get('/catalog/:type/:id/:extra.json', async (req, res) => {
 });
 
 // Meta route
-app.get('/meta/:type/:id.json', async (req, res) => {
+app.get(['/meta/:type/:id.json', '/api/meta/:type/:id.json'], async (req, res) => {
   try {
     const result = await handleMeta(req.params.type, req.params.id);
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.json(result);
   } catch (e) {
     res.json({ meta: { id: req.params.id, type: req.params.type, name: "未知" } });
@@ -175,9 +198,10 @@ app.get('/meta/:type/:id.json', async (req, res) => {
 });
 
 // Stream route
-app.get('/stream/:type/:id.json', async (req, res) => {
+app.get(['/stream/:type/:id.json', '/api/stream/:type/:id.json'], async (req, res) => {
   try {
     const result = await handleStream(req.params.type, req.params.id);
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.json(result);
   } catch (e) {
     res.json({ streams: [] });
@@ -185,17 +209,20 @@ app.get('/stream/:type/:id.json', async (req, res) => {
 });
 
 // Sources raw JSON
-app.get('/sources.json', (req, res) => {
+app.get(['/sources.json', '/api/sources.json', '/api/sources'], (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.json(vodSources);
 });
 
-app.listen(PORT, () => {
-  const localIp = getLocalIp();
-  console.log(`\n==================================================`);
-  console.log(`🚀 VOD & Top50 Addon Server running!`);
-  console.log(`📺 Manifest URL:       http://${localIp}:${PORT}/manifest.json`);
-  console.log(`📺 SenPlayer M3U8 URL: http://${localIp}:${PORT}/playlist.m3u8`);
-  console.log(`==================================================\n`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    const localIp = getLocalIp();
+    console.log(`\n==================================================`);
+    console.log(`🚀 VOD & Top50 Addon Server running!`);
+    console.log(`📺 Manifest URL:       http://${localIp}:${PORT}/manifest.json`);
+    console.log(`📺 SenPlayer M3U8 URL: http://${localIp}:${PORT}/playlist.m3u8`);
+    console.log(`==================================================\n`);
+  });
+}
 
 module.exports = app;
