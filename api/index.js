@@ -7,7 +7,7 @@ const top50Hub = require('../src/data_top50.json');
 const app = express();
 app.use(cors());
 
-// Playlist handler (M3U & M3U8)
+// Universal Playlist generator
 const sendPlaylist = (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
@@ -22,24 +22,22 @@ const sendPlaylist = (req, res) => {
   res.status(200).send(m3u);
 };
 
-app.get(['/playlist.m3u8', '/playlist.m3u', '/live.m3u8', '/tv.m3u8', '/channels.m3u8', '/api/playlist.m3u8', '/api/playlist.m3u', '/api/playlist', '/api/live.m3u8'], sendPlaylist);
-
-// Manifest
-app.get(['/manifest.json', '/billy-manifest.json', '/api/manifest.json', '/api/manifest', '/api/billy-manifest.json'], (req, res) => {
+// 1. Manifest
+app.all(['/manifest.json', '/billy-manifest.json', '/api/manifest.json', '/api/manifest', '/api/billy-manifest.json'], (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.setHeader('Content-Type', 'application/json');
   res.status(200).json(manifest);
 });
 
-// Top 50
-app.get(['/top50.json', '/top50', '/api/top50.json', '/api/top50'], (req, res) => {
+// 2. Top 50
+app.all(['/top50.json', '/top50', '/api/top50.json', '/api/top50'], (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.status(200).json(top50Hub);
 });
 
-// TVBox
-app.get(['/tvbox.json', '/api/tvbox.json', '/api/tvbox'], (req, res) => {
+// 3. TVBox
+app.all(['/tvbox.json', '/api/tvbox.json', '/api/tvbox'], (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.status(200).json({
     sites: vodSources.map(src => ({
@@ -54,14 +52,14 @@ app.get(['/tvbox.json', '/api/tvbox.json', '/api/tvbox'], (req, res) => {
   });
 });
 
-// Sources
-app.get(['/sources.json', '/api/sources.json', '/api/sources'], (req, res) => {
+// 4. Sources
+app.all(['/sources.json', '/api/sources.json', '/api/sources'], (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.status(200).json(vodSources);
 });
 
-// Catalog route
-app.get(['/catalog/:type/:id.json', '/api/catalog/:type/:id.json'], async (req, res) => {
+// 5. Catalog
+app.all(['/catalog/:type/:id.json', '/api/catalog/:type/:id.json'], async (req, res) => {
   try {
     const type = req.params.type || 'movie';
     const id = req.params.id || 'billy_maccms_movie';
@@ -73,7 +71,7 @@ app.get(['/catalog/:type/:id.json', '/api/catalog/:type/:id.json'], async (req, 
   }
 });
 
-app.get(['/catalog/:type/:id/:extra.json', '/api/catalog/:type/:id/:extra.json'], async (req, res) => {
+app.all(['/catalog/:type/:id/:extra.json', '/api/catalog/:type/:id/:extra.json'], async (req, res) => {
   try {
     const type = req.params.type || 'movie';
     const id = req.params.id || 'billy_maccms_movie';
@@ -91,8 +89,8 @@ app.get(['/catalog/:type/:id/:extra.json', '/api/catalog/:type/:id/:extra.json']
   }
 });
 
-// Meta route
-app.get(['/meta/:type/:id.json', '/api/meta/:type/:id.json'], async (req, res) => {
+// 6. Meta
+app.all(['/meta/:type/:id.json', '/api/meta/:type/:id.json'], async (req, res) => {
   try {
     const result = await handleMeta(req.params.type, req.params.id);
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -102,8 +100,8 @@ app.get(['/meta/:type/:id.json', '/api/meta/:type/:id.json'], async (req, res) =
   }
 });
 
-// Stream route
-app.get(['/stream/:type/:id.json', '/api/stream/:type/:id.json'], async (req, res) => {
+// 7. Stream
+app.all(['/stream/:type/:id.json', '/api/stream/:type/:id.json'], async (req, res) => {
   try {
     const result = await handleStream(req.params.type, req.params.id);
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -113,7 +111,7 @@ app.get(['/stream/:type/:id.json', '/api/stream/:type/:id.json'], async (req, re
   }
 });
 
-// Fallback all other GET requests to playlist M3U8
-app.get('*', sendPlaylist);
+// 8. Catch-all for all playlist and root requests
+app.all('*', sendPlaylist);
 
 module.exports = app;
