@@ -1,8 +1,8 @@
 {
-  "id": "org.strand.vod.billy.top50",
-  "version": "1.0.0",
-  "name": "Streaming Sites Hub & All VOD Sources (350+ Sites)",
-  "description": "Merged Top 50 & 300+ MacCMS VOD sources for Strand & M3U8 players",
+  "id": "org.strand.vod.billy.fulltop100",
+  "version": "3.0.0",
+  "name": "gz.app / nqjc.net / fluxtv / dulo / Top 100 & MacCMS VOD",
+  "description": "Strand VOD Addon containing StreamingSitesHub Top 100 + gz.app, nqjc.net, fluxtv.cc, dulo.cx & MacCMS VOD sources",
   "resources": [
     "catalog",
     "stream",
@@ -15,12 +15,11 @@
   "catalogs": [
     {
       "type": "movie",
-      "id": "top50_vod",
-      "name": "Top 350+ Combined VOD Sites"
+      "id": "top100_all",
+      "name": "Top 100 & All VOD Sources"
     }
   ],
   "idPrefixes": [
-    "top50_",
-    "vod_"
+    "top100_"
   ]
 }
