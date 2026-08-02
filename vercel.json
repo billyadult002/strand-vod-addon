@@ -1,60 +1,14 @@
 {
-  "routes": [
-    {
-      "src": "/manifest.json",
-      "dest": "/api/manifest"
-    },
-    {
-      "src": "/billy-manifest.json",
-      "dest": "/api/billy-manifest"
-    },
-    {
-      "src": "/top50.json",
-      "dest": "/api/top50"
-    },
-    {
-      "src": "/playlist.m3u8",
-      "dest": "/api/playlist"
-    },
-    {
-      "src": "/playlist.m3u",
-      "dest": "/api/playlist"
-    },
-    {
-      "src": "/live.m3u8",
-      "dest": "/api/playlist"
-    },
-    {
-      "src": "/tv.m3u8",
-      "dest": "/api/playlist"
-    },
-    {
-      "src": "/channels.m3u8",
-      "dest": "/api/playlist"
-    },
-    {
-      "src": "/sources.json",
-      "dest": "/api/sources"
-    },
-    {
-      "src": "/tvbox.json",
-      "dest": "/api/tvbox"
-    },
-    {
-      "src": "/catalog/(.*)",
-      "dest": "/api/catalog"
-    },
-    {
-      "src": "/meta/(.*)",
-      "dest": "/api/meta"
-    },
-    {
-      "src": "/stream/(.*)",
-      "dest": "/api/stream"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index"
-    }
+  "rewrites": [
+    { "source": "/manifest.json", "destination": "/api/manifest" },
+    { "source": "/billy-manifest.json", "destination": "/api/billy-manifest" },
+    { "source": "/playlist.m3u8", "destination": "/api/playlist" },
+    { "source": "/playlist.m3u", "destination": "/api/playlist" },
+    { "source": "/live.m3u8", "destination": "/api/playlist" },
+    { "source": "/tv.m3u8", "destination": "/api/playlist" },
+    { "source": "/channels.m3u8", "destination": "/api/playlist" },
+    { "source": "/top50.json", "destination": "/api/top50" },
+    { "source": "/tvbox.json", "destination": "/api/tvbox" },
+    { "source": "/sources.json", "destination": "/api/sources" }
   ]
 }
