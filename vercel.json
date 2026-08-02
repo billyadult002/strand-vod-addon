@@ -1,5 +1,12 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/api" }
+    { "source": "/playlist.m3u8", "destination": "/api/playlist" },
+    { "source": "/playlist.m3u", "destination": "/api/playlist" },
+    { "source": "/live.m3u8", "destination": "/api/playlist" },
+    { "source": "/tv.m3u8", "destination": "/api/playlist" },
+    { "source": "/channels.m3u8", "destination": "/api/playlist" },
+    { "source": "/manifest.json", "destination": "/api/manifest" },
+    { "source": "/billy-manifest.json", "destination": "/api/manifest" },
+    { "source": "/top50.json", "destination": "/api/top50" }
   ]
 }
