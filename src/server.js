@@ -16,6 +16,24 @@ const PORT = process.env.PORT || 7000;
 
 app.use(cors());
 
+// Debug middleware - log every request
+app.use((req, res, next) => {
+  console.log(`[DEBUG] url=${req.url} path=${req.path} originalUrl=${req.originalUrl} baseUrl=${req.baseUrl}`);
+  next();
+});
+
+// Debug route - return request info as JSON
+app.get('/debug', (req, res) => {
+  res.json({
+    url: req.url,
+    path: req.path,
+    originalUrl: req.originalUrl,
+    baseUrl: req.baseUrl,
+    method: req.method,
+    headers: req.headers
+  });
+});
+
 function getLocalIp() {
   const interfaces = os.networkInterfaces();
   for (const name of Object.keys(interfaces)) {
