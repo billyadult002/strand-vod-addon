@@ -1,0 +1,40 @@
+{
+  "routes": [
+    {
+      "src": "/manifest.json",
+      "dest": "/api/manifest.js"
+    },
+    {
+      "src": "/top50.json",
+      "dest": "/api/top50.js"
+    },
+    {
+      "src": "/playlist.m3u",
+      "dest": "/api/playlist.js"
+    },
+    {
+      "src": "/sources.json",
+      "dest": "/api/sources.js"
+    },
+    {
+      "src": "/tvbox.json",
+      "dest": "/api/tvbox.js"
+    },
+    {
+      "src": "/catalog/(.*)",
+      "dest": "/api/catalog.js"
+    },
+    {
+      "src": "/meta/(.*)",
+      "dest": "/api/meta.js"
+    },
+    {
+      "src": "/stream/(.*)",
+      "dest": "/api/stream.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.js"
+    }
+  ]
+}
