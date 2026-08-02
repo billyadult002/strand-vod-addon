@@ -1,5 +1,12 @@
 {
-  "routes": [
-    { "src": "/(.*)", "dest": "/api/index.js" }
+  "rewrites": [
+    { "source": "/manifest.json", "destination": "/api/manifest" },
+    { "source": "/billy-manifest.json", "destination": "/api/manifest" },
+    { "source": "/playlist.m3u8", "destination": "/api/playlist.m3u8" },
+    { "source": "/playlist.m3u", "destination": "/api/playlist" },
+    { "source": "/live.m3u8", "destination": "/api/playlist.m3u8" },
+    { "source": "/tv.m3u8", "destination": "/api/playlist.m3u8" },
+    { "source": "/channels.m3u8", "destination": "/api/playlist.m3u8" },
+    { "source": "/top50.json", "destination": "/api/top50" }
   ]
 }
