@@ -1,0 +1,25 @@
+{
+  "id": "org.strand.vod.billy.top50",
+  "version": "1.0.0",
+  "name": "Streaming Sites Hub Top 50 VOD",
+  "description": "StreamingSitesHub Top 50 VOD sites addon for Strand & M3U8 players",
+  "resources": [
+    "catalog",
+    "stream",
+    "meta"
+  ],
+  "types": [
+    "movie",
+    "series"
+  ],
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "top50_vod",
+      "name": "Top 50 Streaming Hub"
+    }
+  ],
+  "idPrefixes": [
+    "top50_"
+  ]
+}
