@@ -1,0 +1,24 @@
+{
+  "id": "org.strand.vod.billy.type3",
+  "version": "1.0.0",
+  "name": "Type 3 Playwright Scraper Addon",
+  "description": "Extracted using Playwright JS injection for non-standard sites",
+  "resources": [
+    "catalog",
+    "stream"
+  ],
+  "types": [
+    "movie",
+    "series"
+  ],
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "movies",
+      "name": "Type 3 Movies"
+    }
+  ],
+  "idPrefixes": [
+    "vod_"
+  ]
+}
