@@ -1,14 +1,5 @@
 {
   "rewrites": [
-    { "source": "/manifest.json", "destination": "/api/manifest.js" },
-    { "source": "/billy-manifest.json", "destination": "/api/billy-manifest.js" },
-    { "source": "/playlist.m3u8", "destination": "/api/playlist.m3u8.js" },
-    { "source": "/playlist.m3u", "destination": "/api/playlist.m3u.js" },
-    { "source": "/live.m3u8", "destination": "/api/playlist.m3u8.js" },
-    { "source": "/tv.m3u8", "destination": "/api/playlist.m3u8.js" },
-    { "source": "/channels.m3u8", "destination": "/api/playlist.m3u8.js" },
-    { "source": "/top50.json", "destination": "/api/top50.js" },
-    { "source": "/tvbox.json", "destination": "/api/tvbox.js" },
-    { "source": "/sources.json", "destination": "/api/sources.js" }
+    { "source": "/(.*)", "destination": "/api/index.js" }
   ]
 }
