@@ -1,6 +1,6 @@
 const { manifest, handleCatalog, handleStream } = require('../src/addon');
 const { vodSources } = require('../src/maccms');
-const top50Hub = require('../data/streamingsiteshub_top50.json');
+const top50Hub = require('../src/data_top50.json');
 
 async function runTests() {
   console.log('=== Strand VOD & Top50 Addon Test Suite ===');
@@ -12,16 +12,16 @@ async function runTests() {
   }
   console.log('✔ Test 1 Passed: 301 VOD sources & 50 StreamingSitesHub sites loaded.');
 
-  // Test 2: Verify Manifest
-  console.log(`[Test 2] Addon Name: ${manifest.name}`);
-  if (!manifest.id || manifest.resources.length !== 3) {
-    throw new Error('Manifest validation failed');
+  // Test 2: Verify Unique Manifest ID & Name
+  console.log(`[Test 2] Addon ID: ${manifest.id}, Addon Name: ${manifest.name}`);
+  if (manifest.id !== 'com.billyadult002.strand.vod.top50' || !manifest.name.includes("Billy's")) {
+    throw new Error('Manifest identity validation failed');
   }
-  console.log('✔ Test 2 Passed: Stremio Manifest protocol structure is correct.');
+  console.log('✔ Test 2 Passed: Unique Stremio Manifest identity validated.');
 
   // Test 3: Top 50 Hub Catalog Query
-  console.log('[Test 3] Testing catalog handler for hub_top50...');
-  const hubCatalog = await handleCatalog('movie', 'hub_top50');
+  console.log('[Test 3] Testing catalog handler for billy_hub_top50...');
+  const hubCatalog = await handleCatalog('movie', 'billy_hub_top50');
   console.log(`Top 50 catalog item count: ${hubCatalog.metas.length}`);
   if (hubCatalog.metas.length !== 50) {
     throw new Error('Hub catalog validation failed');

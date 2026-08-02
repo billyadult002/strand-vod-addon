@@ -3,18 +3,18 @@ const path = require('path');
 const top50Hub = require('./data_top50.json');
 
 const manifest = {
-  id: "org.strand.maccms.vod",
-  version: "2.0.0",
-  name: "中文影视 & 全球Top50聚合 (Strand VOD Addon)",
-  description: "适用于 Apple TV Strand App / Stremio 的影视 Addon，整合 301 个中文 VOD 源及 StreamingSitesHub 前 50 精选免费影视/动漫/体育站点",
+  id: "com.billyadult002.strand.vod.top50",
+  version: "2.1.0",
+  name: "Billy's VOD & Top50 影视聚合 (Strand Addon)",
+  description: "Billy 专属 Apple TV Strand App / Stremio 影视 Addon，整合 301 个中文 VOD 源及 StreamingSitesHub 前 50 精选免费影视/动漫/体育站点",
   logo: "https://v.strem.io/images/stremio-logo-white.png",
   resources: ["catalog", "meta", "stream"],
   types: ["movie", "series", "anime"],
   catalogs: [
     {
       type: "movie",
-      id: "maccms_movie",
-      name: "中文电影",
+      id: "billy_maccms_movie",
+      name: "中文电影 (Billy VOD)",
       extra: [
         { name: "search", isRequired: false },
         { name: "skip", isRequired: false }
@@ -22,8 +22,8 @@ const manifest = {
     },
     {
       type: "series",
-      id: "maccms_series",
-      name: "中文剧集",
+      id: "billy_maccms_series",
+      name: "中文剧集 (Billy VOD)",
       extra: [
         { name: "search", isRequired: false },
         { name: "skip", isRequired: false }
@@ -31,7 +31,7 @@ const manifest = {
     },
     {
       type: "movie",
-      id: "hub_top50",
+      id: "billy_hub_top50",
       name: "StreamingSitesHub Top 50 站点",
       extra: [
         { name: "search", isRequired: false }
@@ -47,7 +47,7 @@ const manifest = {
 async function handleCatalog(type, id, extra = {}) {
   const searchQuery = extra.search;
 
-  if (id === 'hub_top50') {
+  if (id === 'billy_hub_top50' || id === 'hub_top50') {
     const metas = top50Hub.map(site => ({
       id: `hub:${site.rank}`,
       type: "movie",
