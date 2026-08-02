@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
+    "build": "node scripts/generate_static_playlist.js",
     "test": "node tests/test_addon.js"
   },
   "engines": {
