@@ -2,59 +2,59 @@
   "routes": [
     {
       "src": "/manifest.json",
-      "dest": "/api/manifest.js"
+      "dest": "/api/manifest"
     },
     {
       "src": "/billy-manifest.json",
-      "dest": "/api/billy-manifest.js"
+      "dest": "/api/billy-manifest"
     },
     {
       "src": "/top50.json",
-      "dest": "/api/top50.js"
+      "dest": "/api/top50"
     },
     {
       "src": "/playlist.m3u8",
-      "dest": "/api/playlist.m3u8.js"
-    },
-    {
-      "src": "/live.m3u8",
-      "dest": "/api/playlist.m3u8.js"
-    },
-    {
-      "src": "/tv.m3u8",
-      "dest": "/api/playlist.m3u8.js"
-    },
-    {
-      "src": "/channels.m3u8",
-      "dest": "/api/playlist.m3u8.js"
+      "dest": "/api/playlist"
     },
     {
       "src": "/playlist.m3u",
-      "dest": "/api/playlist.js"
+      "dest": "/api/playlist"
+    },
+    {
+      "src": "/live.m3u8",
+      "dest": "/api/playlist"
+    },
+    {
+      "src": "/tv.m3u8",
+      "dest": "/api/playlist"
+    },
+    {
+      "src": "/channels.m3u8",
+      "dest": "/api/playlist"
     },
     {
       "src": "/sources.json",
-      "dest": "/api/sources.js"
+      "dest": "/api/sources"
     },
     {
       "src": "/tvbox.json",
-      "dest": "/api/tvbox.js"
+      "dest": "/api/tvbox"
     },
     {
       "src": "/catalog/(.*)",
-      "dest": "/api/catalog.js"
+      "dest": "/api/catalog"
     },
     {
       "src": "/meta/(.*)",
-      "dest": "/api/meta.js"
+      "dest": "/api/meta"
     },
     {
       "src": "/stream/(.*)",
-      "dest": "/api/stream.js"
+      "dest": "/api/stream"
     },
     {
       "src": "/(.*)",
-      "dest": "/api/index.js"
+      "dest": "/api/index"
     }
   ]
 }
