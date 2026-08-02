@@ -1,7 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
-const os = require('os');
 const { manifest, handleCatalog, handleMeta, handleStream } = require('../src/addon');
 const { vodSources } = require('../src/maccms');
 const top50Hub = require('../src/data_top50.json');
@@ -10,10 +8,20 @@ const app = express();
 
 app.use(cors());
 
-// Middleware for M3U and M3U8 requests
-app.use((req, res, next) => {
-  const url = req.url || req.path || '';
-  if (url.includes('playlist') || url.includes('m3u')) {
+// Universal handler matching all paths
+app.get('*', async (req, res) => {
+  const url = req.url || req.originalUrl || req.path || '';
+
+  // 1. Manifest
+  if (url.includes('manifest')) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.setHeader('Content-Type', 'application/json');
+    return res.json(manifest);
+  }
+
+  // 2. M3U / M3U8 Playlist
+  if (url.includes('playlist') || url.includes('m3u') || url.includes('live') || url.includes('channels')) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.setHeader('Content-Type', 'application/vnd.apple.mpegurl; charset=utf-8');
@@ -26,39 +34,17 @@ app.use((req, res, next) => {
     });
     return res.status(200).send(m3u);
   }
-  next();
-});
 
-// Middleware for Manifest requests
-app.use((req, res, next) => {
-  const url = req.url || req.path || '';
-  if (url.includes('manifest')) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-    res.setHeader('Content-Type', 'application/json');
-    return res.status(200).json(manifest);
-  }
-  next();
-});
-
-// Middleware for Top 50 requests
-app.use((req, res, next) => {
-  const url = req.url || req.path || '';
+  // 3. Top 50
   if (url.includes('top50')) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-    return res.status(200).json(top50Hub);
+    return res.json(top50Hub);
   }
-  next();
-});
 
-// Middleware for TVBox requests
-app.use((req, res, next) => {
-  const url = req.url || req.path || '';
+  // 4. TVBox
   if (url.includes('tvbox')) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-    return res.status(200).json({
+    return res.json({
       sites: vodSources.map(src => ({
         key: src.id,
         name: src.name,
@@ -70,11 +56,65 @@ app.use((req, res, next) => {
       }))
     });
   }
-  next();
-});
 
-// Root home page
-app.get('/', (req, res) => {
+  // 5. Sources
+  if (url.includes('sources')) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    return res.json(vodSources);
+  }
+
+  // 6. Catalog
+  if (url.includes('/catalog/')) {
+    try {
+      const parts = url.split('/catalog/')[1].split('/');
+      const type = parts[0] || 'movie';
+      const idStr = parts[1] || 'billy_maccms_movie.json';
+      const id = idStr.replace('.json', '');
+      let extraParams = {};
+      if (parts[2]) {
+        const extraStr = parts[2].replace('.json', '');
+        if (extraStr.includes('search=')) {
+          const match = extraStr.match(/search=([^&]+)/);
+          if (match) extraParams.search = decodeURIComponent(match[1]);
+        }
+      }
+      const result = await handleCatalog(type, id, extraParams);
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      return res.json(result);
+    } catch (e) {
+      return res.json({ metas: [] });
+    }
+  }
+
+  // 7. Meta
+  if (url.includes('/meta/')) {
+    try {
+      const parts = url.split('/meta/')[1].split('/');
+      const type = parts[0] || 'movie';
+      const id = (parts[1] || '').replace('.json', '');
+      const result = await handleMeta(type, id);
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      return res.json(result);
+    } catch (e) {
+      return res.json({ meta: { id: "unknown", type: "movie", name: "未知" } });
+    }
+  }
+
+  // 8. Stream
+  if (url.includes('/stream/')) {
+    try {
+      const parts = url.split('/stream/')[1].split('/');
+      const type = parts[0] || 'movie';
+      const id = (parts[1] || '').replace('.json', '');
+      const result = await handleStream(type, id);
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      return res.json(result);
+    } catch (e) {
+      return res.json({ streams: [] });
+    }
+  }
+
+  // 9. Root / Default HTML
   const host = req.get('host');
   const protocol = req.protocol;
   const manifestUrl = `${protocol}://${host}/manifest.json`;
@@ -141,60 +181,6 @@ app.get('/', (req, res) => {
     </body>
     </html>
   `);
-});
-
-// Catalog route
-app.get(['/catalog/:type/:id.json', '/api/catalog/:type/:id.json'], async (req, res) => {
-  try {
-    const type = req.params.type || 'movie';
-    const id = req.params.id || 'billy_maccms_movie';
-    const result = await handleCatalog(type, id);
-    res.json(result);
-  } catch (e) {
-    res.json({ metas: [] });
-  }
-});
-
-app.get(['/catalog/:type/:id/:extra.json', '/api/catalog/:type/:id/:extra.json'], async (req, res) => {
-  try {
-    const type = req.params.type || 'movie';
-    const id = req.params.id || 'billy_maccms_movie';
-    const extraStr = req.params.extra || '';
-    const extraParams = {};
-    if (extraStr.includes('search=')) {
-      const match = extraStr.match(/search=([^&]+)/);
-      if (match) extraParams.search = decodeURIComponent(match[1]);
-    }
-    const result = await handleCatalog(type, id, extraParams);
-    res.json(result);
-  } catch (e) {
-    res.json({ metas: [] });
-  }
-});
-
-// Meta route
-app.get(['/meta/:type/:id.json', '/api/meta/:type/:id.json'], async (req, res) => {
-  try {
-    const result = await handleMeta(req.params.type, req.params.id);
-    res.json(result);
-  } catch (e) {
-    res.json({ meta: { id: req.params.id, type: req.params.type, name: "未知" } });
-  }
-});
-
-// Stream route
-app.get(['/stream/:type/:id.json', '/api/stream/:type/:id.json'], async (req, res) => {
-  try {
-    const result = await handleStream(req.params.type, req.params.id);
-    res.json(result);
-  } catch (e) {
-    res.json({ streams: [] });
-  }
-});
-
-// Sources raw JSON
-app.get(['/sources.json', '/api/sources'], (req, res) => {
-  res.json(vodSources);
 });
 
 module.exports = app;
