@@ -92,7 +92,7 @@ module.exports = async (req, res) => {
     }
   }
 
-  // 8. Default for all M3U/M3U8 playlist & non-JSON requests
+  // DEFAULT / PLAYLIST / ALL OTHER PATHS -> RETURN M3U8 PLAYLIST
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.setHeader('Content-Type', 'application/vnd.apple.mpegurl; charset=utf-8');
