@@ -22,6 +22,25 @@ const sendPlaylist = (req, res) => {
   res.status(200).send(m3u);
 };
 
+// TOP-LEVEL INTERCEPTOR: Catch ALL playlist requests & non-API routes FIRST
+app.use((req, res, next) => {
+  const url = (req.url || '').toLowerCase();
+  const isApiJson = (
+    url.includes('manifest') ||
+    url.includes('top50') ||
+    url.includes('tvbox') ||
+    url.includes('sources') ||
+    url.includes('catalog') ||
+    url.includes('meta') ||
+    url.includes('stream')
+  );
+
+  if (!isApiJson || url.includes('m3u') || url.includes('playlist') || url.includes('live') || url.includes('tv') || url.includes('channels')) {
+    return sendPlaylist(req, res);
+  }
+  next();
+});
+
 // 1. Manifest
 app.all(['/manifest.json', '/billy-manifest.json', '/api/manifest.json', '/api/manifest', '/api/billy-manifest.json'], (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -111,7 +130,7 @@ app.all(['/stream/:type/:id.json', '/api/stream/:type/:id.json'], async (req, re
   }
 });
 
-// 8. Catch-all for all playlist and root requests
-app.all('*', sendPlaylist);
+// Fallback all other GET requests to playlist M3U8
+app.use(sendPlaylist);
 
 module.exports = app;
