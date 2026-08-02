@@ -1,13 +1,15 @@
 {
-  "rewrites": [
-    { "source": "/manifest.json", "destination": "/api/manifest.js" },
-    { "source": "/top50.json", "destination": "/api/top50.js" },
-    { "source": "/top50", "destination": "/api/top50.js" },
-    { "source": "/sources.json", "destination": "/api/sources.js" },
-    { "source": "/playlist.m3u", "destination": "/api/playlist.js" },
-    { "source": "/tvbox.json", "destination": "/api/tvbox.js" },
-    { "source": "/catalog/(.*)", "destination": "/api/catalog.js" },
-    { "source": "/meta/(.*)", "destination": "/api/meta.js" },
-    { "source": "/stream/(.*)", "destination": "/api/stream.js" }
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.js"
+    }
   ]
 }
