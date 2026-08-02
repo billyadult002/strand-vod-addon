@@ -1,603 +1,99 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="src_1" tvg-name="海外看資源" tvg-logo="" group-title="Streaming Hub Top 50",海外看資源
-https://haiwaikan.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_2" tvg-name="hongniuzy2红牛资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",hongniuzy2红牛资源(切)
-https://www.hongniuzy2.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_3" tvg-name="lziapi量子资源" tvg-logo="" group-title="Streaming Hub Top 50",lziapi量子资源
-https://cj.lziapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_4" tvg-name="開放電影" tvg-logo="" group-title="Streaming Hub Top 50",開放電影
-https://vod-demo.onrender.com/pubdovod.php/
-#EXTINF:-1 tvg-id="src_5" tvg-name="优质资源库" tvg-logo="" group-title="Streaming Hub Top 50",优质资源库
-https://api.1080zyku.com/inc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_6" tvg-name="39kan39影视" tvg-logo="" group-title="Streaming Hub Top 50",39kan39影视
-https://www.39kan.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_7" tvg-name="天堂资源" tvg-logo="" group-title="Streaming Hub Top 50",天堂资源
-http://vipmv.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_8" tvg-name="lehootv乐活影视" tvg-logo="" group-title="Streaming Hub Top 50",lehootv乐活影视
-https://lehootv.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_9" tvg-name="唐人街" tvg-logo="" group-title="Streaming Hub Top 50",唐人街
-https://www.tangrenjie.tv/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_10" tvg-name="酷点资源" tvg-logo="" group-title="Streaming Hub Top 50",酷点资源
-https://api.kuapi.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_11" tvg-name="wolongzyw卧龙资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",wolongzyw卧龙资源(切)
-https://collect.wolongzyw.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_12" tvg-name="酷点资源" tvg-logo="" group-title="Streaming Hub Top 50",酷点资源
-https://kudian10.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_13" tvg-name="森林资源" tvg-logo="" group-title="Streaming Hub Top 50",森林资源
-https://slapibf.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_14" tvg-name="影库资源-伦理" tvg-logo="" group-title="Streaming Hub Top 50",影库资源-伦理
-https://api.ykapi.net/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_15" tvg-name="kczyapi快车资源" tvg-logo="" group-title="Streaming Hub Top 50",kczyapi快车资源
-https://caiji.kczyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_16" tvg-name="探探资源" tvg-logo="" group-title="Streaming Hub Top 50",探探资源
-https://apittzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_17" tvg-name="sdzyapi闪电资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",sdzyapi闪电资源(切)
-https://sdzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_18" tvg-name="金鹰资源" tvg-logo="" group-title="Streaming Hub Top 50",金鹰资源
-https://jyzyapi.com/provide/vod/
-#EXTINF:-1 tvg-id="src_19" tvg-name="guangsuapi光速资源" tvg-logo="" group-title="Streaming Hub Top 50",guangsuapi光速资源
-https://api.guangsuapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_20" tvg-name="奥斯卡资源网" tvg-logo="" group-title="Streaming Hub Top 50",奥斯卡资源网
-https://aosikazy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_21" tvg-name="老鸭资源采集" tvg-logo="" group-title="Streaming Hub Top 50",老鸭资源采集
-https://api.apilyzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_22" tvg-name="ukuapiU酷资源" tvg-logo="" group-title="Streaming Hub Top 50",ukuapiU酷资源
-https://api.ukuapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_23" tvg-name="北斗星资源" tvg-logo="" group-title="Streaming Hub Top 50",北斗星资源
-https://m3u8.bdxzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_24" tvg-name="apiyhzy樱花资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",apiyhzy樱花资源(切)
-https://m3u8.apiyhzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_25" tvg-name="feisuzy飞速资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",feisuzy飞速资源(切)
-https://www.feisuzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_26" tvg-name="kuaibozy快播资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",kuaibozy快播资源(切)
-http://www.kuaibozy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_27" tvg-name="apibdzy百度资源" tvg-logo="" group-title="Streaming Hub Top 50",apibdzy百度资源
-https://api.apibdzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_28" tvg-name="lovedan艾旦影视" tvg-logo="" group-title="Streaming Hub Top 50",lovedan艾旦影视
-https://lovedan.net/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_29" tvg-name="zzrhgg飘花" tvg-logo="" group-title="Streaming Hub Top 50",zzrhgg飘花
-http://www.zzrhgg.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_30" tvg-name="网民电影" tvg-logo="" group-title="Streaming Hub Top 50",网民电影
-https://www.prinevillesda.org/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_31" tvg-name="丝袜资源" tvg-logo="" group-title="Streaming Hub Top 50",丝袜资源
-https://siwazyw.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_32" tvg-name="天空資源" tvg-logo="" group-title="Streaming Hub Top 50",天空資源
-https://m3u8.tiankongapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_33" tvg-name="皇冠资源" tvg-logo="" group-title="Streaming Hub Top 50",皇冠资源
-https://hghhh.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_34" tvg-name="anltv忆梦(官)" tvg-logo="" group-title="Streaming Hub Top 50",anltv忆梦(官)
-http://anltv.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_35" tvg-name="M3U8.TV资源" tvg-logo="" group-title="Streaming Hub Top 50",M3U8.TV资源
-https://www.zycaiji.net:7788/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_36" tvg-name="飘零影院" tvg-logo="" group-title="Streaming Hub Top 50",飘零影院
-https://p2100.net/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_37" tvg-name="新马影视" tvg-logo="" group-title="Streaming Hub Top 50",新马影视
-https://movie.gsl99.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_38" tvg-name="ikun资源" tvg-logo="" group-title="Streaming Hub Top 50",ikun资源
-https://ikunzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_39" tvg-name="阿里影视" tvg-logo="" group-title="Streaming Hub Top 50",阿里影视
-http://aliys.cn:90/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_40" tvg-name="88dav" tvg-logo="" group-title="Streaming Hub Top 50",88dav
-https://www.888dav.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_41" tvg-name="水蜜桃" tvg-logo="" group-title="Streaming Hub Top 50",水蜜桃
-http://51smt4.xyz/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_42" tvg-name="可可资源" tvg-logo="" group-title="Streaming Hub Top 50",可可资源
-https://caiji.kekezyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_43" tvg-name="kudianzy酷点资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",kudianzy酷点资源(切)
-https://kudianzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_44" tvg-name="天翼资源" tvg-logo="" group-title="Streaming Hub Top 50",天翼资源
-https://www.911ysw.top/tianyi.php/provide/vod/
-#EXTINF:-1 tvg-id="src_45" tvg-name="foxzyapiFOX资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",foxzyapiFOX资源(切)
-https://api.foxzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_46" tvg-name="88资源" tvg-logo="" group-title="Streaming Hub Top 50",88资源
-http://99zy.pw/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_47" tvg-name="鱼乐资源" tvg-logo="" group-title="Streaming Hub Top 50",鱼乐资源
-https://api.ylzy1.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_48" tvg-name="蜜蜂影视" tvg-logo="" group-title="Streaming Hub Top 50",蜜蜂影视
-https://www.beeyao.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_49" tvg-name="色南国资源" tvg-logo="" group-title="Streaming Hub Top 50",色南国资源
-https://api.sexnguon.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_50" tvg-name="大地" tvg-logo="" group-title="Streaming Hub Top 50",大地
-https://dadiapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_51" tvg-name="色窝" tvg-logo="" group-title="Streaming Hub Top 50",色窝
-https://sewozyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_52" tvg-name="243影视" tvg-logo="" group-title="Streaming Hub Top 50",243影视
-https://www.knyu.net/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_53" tvg-name="KK写真资源" tvg-logo="" group-title="Streaming Hub Top 50",KK写真资源
-https://kkzy.me/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_54" tvg-name="xinlangapi新浪资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",xinlangapi新浪资源(切)
-http://api.xinlangapi.com/xinlangapi.php/provide/vod/
-#EXTINF:-1 tvg-id="src_55" tvg-name="国色" tvg-logo="" group-title="Streaming Hub Top 50",国色
-https://api.guosezy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_56" tvg-name="非凡资源" tvg-logo="" group-title="Streaming Hub Top 50",非凡资源
-http://cj.ffzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_57" tvg-name="乐博资源" tvg-logo="" group-title="Streaming Hub Top 50",乐博资源
-https://lebcj.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_58" tvg-name="爱酷影视" tvg-logo="" group-title="Streaming Hub Top 50",爱酷影视
-https://cj1.apiabzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_59" tvg-name="热巴" tvg-logo="" group-title="Streaming Hub Top 50",热巴
-http://reba.aishunxs.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_60" tvg-name="酷豆资源2" tvg-logo="" group-title="Streaming Hub Top 50",酷豆资源2
-https://api.kdapi.info/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_61" tvg-name="花椒" tvg-logo="" group-title="Streaming Hub Top 50",花椒
-https://apihjzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_62" tvg-name="金莲" tvg-logo="" group-title="Streaming Hub Top 50",金莲
-https://111kkkkk.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_63" tvg-name="91md" tvg-logo="" group-title="Streaming Hub Top 50",91md
-https://91md.me/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_64" tvg-name="狼友资源" tvg-logo="" group-title="Streaming Hub Top 50",狼友资源
-https://www.langyouzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_65" tvg-name="淫窝资源" tvg-logo="" group-title="Streaming Hub Top 50",淫窝资源
-https://api.yinwoapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_66" tvg-name="inmi映迷" tvg-logo="" group-title="Streaming Hub Top 50",inmi映迷
-https://www.inmi.app/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_67" tvg-name="极速资源" tvg-logo="" group-title="Streaming Hub Top 50",极速资源
-https://jszy.tv/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_68" tvg-name="虎牙资源" tvg-logo="" group-title="Streaming Hub Top 50",虎牙资源
-https://www.huyaapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_69" tvg-name="速博资源" tvg-logo="" group-title="Streaming Hub Top 50",速博资源
-https://subocaiji.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_70" tvg-name="小猫咪2" tvg-logo="" group-title="Streaming Hub Top 50",小猫咪2
-http://zy.rryy.tv/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_71" tvg-name="ASMR资源" tvg-logo="" group-title="Streaming Hub Top 50",ASMR资源
-http://www.asmr19.in/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_72" tvg-name="CK资源" tvg-logo="" group-title="Streaming Hub Top 50",CK资源
-https://ckzy.me/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_73" tvg-name="feifei" tvg-logo="" group-title="Streaming Hub Top 50",feifei
-http://www.feifei67.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_74" tvg-name="JAV名优" tvg-logo="" group-title="Streaming Hub Top 50",JAV名优
-http://mygzycj.com/api.php/
-#EXTINF:-1 tvg-id="src_75" tvg-name="乐播资源" tvg-logo="" group-title="Streaming Hub Top 50",乐播资源
-https://lbapi9.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_76" tvg-name="AIvin" tvg-logo="" group-title="Streaming Hub Top 50",AIvin
-http://lbapiby.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_77" tvg-name="色猫资源" tvg-logo="" group-title="Streaming Hub Top 50",色猫资源
-https://api.maozyapi.com/inc/apijson_vod.php/
-#EXTINF:-1 tvg-id="src_78" tvg-name="葡萄资源" tvg-logo="" group-title="Streaming Hub Top 50",葡萄资源
-https://api.putaozy.net/inc/apijson_vod.php/
-#EXTINF:-1 tvg-id="src_79" tvg-name="大MM资源" tvg-logo="" group-title="Streaming Hub Top 50",大MM资源
-https://www.dmmapi.com/home/cjapi/asd2c7/mc10/vod/json/
-#EXTINF:-1 tvg-id="src_80" tvg-name="酷豆资源" tvg-logo="" group-title="Streaming Hub Top 50",酷豆资源
-https://kudouzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_81" tvg-name="奶茶资源" tvg-logo="" group-title="Streaming Hub Top 50",奶茶资源
-https://caiji.naichaapi.com/inc/apijson_vod.php/
-#EXTINF:-1 tvg-id="src_82" tvg-name="爱播资源" tvg-logo="" group-title="Streaming Hub Top 50",爱播资源
-https://cj.apiabzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_83" tvg-name="美少女资源" tvg-logo="" group-title="Streaming Hub Top 50",美少女资源
-https://www.msnii.com/api/json.php/
-#EXTINF:-1 tvg-id="src_84" tvg-name="淫水机资源" tvg-logo="" group-title="Streaming Hub Top 50",淫水机资源
-https://www.xrbsp.com/api/json.php/
-#EXTINF:-1 tvg-id="src_85" tvg-name="香奶儿资源" tvg-logo="" group-title="Streaming Hub Top 50",香奶儿资源
-https://www.gdlsp.com/api/json.php/
-#EXTINF:-1 tvg-id="src_86" tvg-name="白嫖资源" tvg-logo="" group-title="Streaming Hub Top 50",白嫖资源
-https://www.kxgav.com/api/json.php/
-#EXTINF:-1 tvg-id="src_87" tvg-name="大地资源" tvg-logo="" group-title="Streaming Hub Top 50",大地资源
-https://dadiapi.com/api.php/
-#EXTINF:-1 tvg-id="src_88" tvg-name="环亚资源" tvg-logo="" group-title="Streaming Hub Top 50",环亚资源
-http://wmcj8.com/inc/sapi.php/
-#EXTINF:-1 tvg-id="src_89" tvg-name="黄AV资源" tvg-logo="" group-title="Streaming Hub Top 50",黄AV资源
-https://www.pgxdy.com/api/json.php/
-#EXTINF:-1 tvg-id="src_90" tvg-name="色色资源" tvg-logo="" group-title="Streaming Hub Top 50",色色资源
-http://secj8.com/inc/sapi.php/
-#EXTINF:-1 tvg-id="src_91" tvg-name="玖玖资源" tvg-logo="" group-title="Streaming Hub Top 50",玖玖资源
-http://99zywcj.com/inc/sapi.php/
-#EXTINF:-1 tvg-id="src_92" tvg-name="狼少年" tvg-logo="" group-title="Streaming Hub Top 50",狼少年
-http://cjmygzy.com/inc/sapi.php/
-#EXTINF:-1 tvg-id="src_93" tvg-name="佳丽资源" tvg-logo="" group-title="Streaming Hub Top 50",佳丽资源
-http://www.jializyzapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_94" tvg-name="番号资源" tvg-logo="" group-title="Streaming Hub Top 50",番号资源
-http://fhapi9.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_95" tvg-name="鲨鱼资源" tvg-logo="" group-title="Streaming Hub Top 50",鲨鱼资源
-https://shayuapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_96" tvg-name="哥哥妹妹" tvg-logo="" group-title="Streaming Hub Top 50",哥哥妹妹
-http://www.ggmmzy.com:9999/inc/json/
-#EXTINF:-1 tvg-id="src_97" tvg-name="芒果资源" tvg-logo="" group-title="Streaming Hub Top 50",芒果资源
-https://mgzyz1.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_98" tvg-name="yikanapi易看资源" tvg-logo="" group-title="Streaming Hub Top 50",yikanapi易看资源
-https://api.yikanapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_99" tvg-name="酷伦理" tvg-logo="" group-title="Streaming Hub Top 50",酷伦理
-https://api.kudian70.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_100" tvg-name="小湿妹资源" tvg-logo="" group-title="Streaming Hub Top 50",小湿妹资源
-https://www.afasu.com/api/json.php/
-#EXTINF:-1 tvg-id="src_101" tvg-name="江湖官采" tvg-logo="" group-title="Streaming Hub Top 50",江湖官采
-http://119.29.1.173/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_102" tvg-name="6U资源" tvg-logo="" group-title="Streaming Hub Top 50",6U资源
-http://www.6uzy.cc/inc/apijson_vod.php/
-#EXTINF:-1 tvg-id="src_103" tvg-name="八戒官采" tvg-logo="" group-title="Streaming Hub Top 50",八戒官采
-https://www.bajiezy.xyz/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_104" tvg-name="土狗2345" tvg-logo="" group-title="Streaming Hub Top 50",土狗2345
-http://2345.tgzy.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_105" tvg-name="土狗360" tvg-logo="" group-title="Streaming Hub Top 50",土狗360
-http://360.tgzy.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_106" tvg-name="nxflv诺讯资源" tvg-logo="" group-title="Streaming Hub Top 50",nxflv诺讯资源
-http://caiji.nxflv.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_107" tvg-name="艾克资源" tvg-logo="" group-title="Streaming Hub Top 50",艾克资源
-https://ikcss.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_108" tvg-name="devclh资源" tvg-logo="" group-title="Streaming Hub Top 50",devclh资源
-http://zl.devclh.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_109" tvg-name="极狐官采" tvg-logo="" group-title="Streaming Hub Top 50",极狐官采
-http://82.156.186.35:5678/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_110" tvg-name="木子看剧" tvg-logo="" group-title="Streaming Hub Top 50",木子看剧
-https://mzkj.maccms.cf/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_111" tvg-name="xiaomaomi小猫咪(官)" tvg-logo="" group-title="Streaming Hub Top 50",xiaomaomi小猫咪(官)
-http://zy.xiaomaomi.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_112" tvg-name="绝影" tvg-logo="" group-title="Streaming Hub Top 50",绝影
-https://106.12.153.187/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_113" tvg-name="阿远采集" tvg-logo="" group-title="Streaming Hub Top 50",阿远采集
-https://www.cjzy.xyz:8888/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_114" tvg-name="极速BT资源" tvg-logo="" group-title="Streaming Hub Top 50",极速BT资源
-https://api.jisubt.com/videos/
-#EXTINF:-1 tvg-id="src_115" tvg-name="yparse步步高资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",yparse步步高资源(切)
-https://api.yparse.com/api/json/
-#EXTINF:-1 tvg-id="src_116" tvg-name="jinyingzy金鹰" tvg-logo="" group-title="Streaming Hub Top 50",jinyingzy金鹰
-http://jinyingzy.com/provide/vod/
-#EXTINF:-1 tvg-id="src_117" tvg-name="蓝天资源" tvg-logo="" group-title="Streaming Hub Top 50",蓝天资源
-https://api.ltzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_118" tvg-name="极客资源" tvg-logo="" group-title="Streaming Hub Top 50",极客资源
-https://jkzy1.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_119" tvg-name="星海资源" tvg-logo="" group-title="Streaming Hub Top 50",星海资源
-https://www.xhzy01.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_120" tvg-name="冠军资源" tvg-logo="" group-title="Streaming Hub Top 50",冠军资源
-https://www.cmpzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_121" tvg-name="1080zyku1080资源库" tvg-logo="" group-title="Streaming Hub Top 50",1080zyku1080资源库
-https://api.1080zyku.com/inc/api_mac10.php/
-#EXTINF:-1 tvg-id="src_122" tvg-name="tomcaijiTOM资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",tomcaijiTOM资源(切)
-https://api.tomcaiji.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_123" tvg-name="松鼠资源" tvg-logo="" group-title="Streaming Hub Top 50",松鼠资源
-https://m3u8.songshuzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_124" tvg-name="多多资源" tvg-logo="" group-title="Streaming Hub Top 50",多多资源
-https://www.ddzyz1.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_125" tvg-name="OK资源" tvg-logo="" group-title="Streaming Hub Top 50",OK资源
-https://www.okcj.site/api/provide/vod/
-#EXTINF:-1 tvg-id="src_126" tvg-name="番茄资源" tvg-logo="" group-title="Streaming Hub Top 50",番茄资源
-http://api.fqzy.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_127" tvg-name="速更资源" tvg-logo="" group-title="Streaming Hub Top 50",速更资源
-https://sugengzy.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_128" tvg-name="hanjuzy韩剧资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",hanjuzy韩剧资源(切)
-http://www.hanjuzy.com/inc/apijson_vod.php/
-#EXTINF:-1 tvg-id="src_129" tvg-name="77hanju77韩剧" tvg-logo="" group-title="Streaming Hub Top 50",77hanju77韩剧
-https://www.77hanju.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_130" tvg-name="bajiecaiji八戒资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",bajiecaiji八戒资源(切)
-http://cj.bajiecaiji.com/inc/apijson_vod.php/
-#EXTINF:-1 tvg-id="src_131" tvg-name="无尽资源" tvg-logo="" group-title="Streaming Hub Top 50",无尽资源
-https://api.wujinapi.net/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_132" tvg-name="tiankongapi天空资源(切)" tvg-logo="" group-title="Streaming Hub Top 50",tiankongapi天空资源(切)
-https://api.tiankongapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_133" tvg-name="乐多资源" tvg-logo="" group-title="Streaming Hub Top 50",乐多资源
-http://cj.leduocaiji.com/inc/api.php/
-#EXTINF:-1 tvg-id="src_134" tvg-name="OK资源2" tvg-logo="" group-title="Streaming Hub Top 50",OK资源2
-http://125.62.68.228/inc/api.php/
-#EXTINF:-1 tvg-id="src_135" tvg-name="FF9资源" tvg-logo="" group-title="Streaming Hub Top 50",FF9资源
-https://www.ff9.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_136" tvg-name="nguonphim南国影源(切)" tvg-logo="" group-title="Streaming Hub Top 50",nguonphim南国影源(切)
-http://api.nguonphim.tv/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_137" tvg-name="看看资源" tvg-logo="" group-title="Streaming Hub Top 50",看看资源
-https://zy.hikan.xyz/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_138" tvg-name="taopianapi淘片资源" tvg-logo="" group-title="Streaming Hub Top 50",taopianapi淘片资源
-https://taopianapi.com/home/cjapi/as/mc10/vod/json/
-#EXTINF:-1 tvg-id="src_139" tvg-name="rrvipw789盘" tvg-logo="" group-title="Streaming Hub Top 50",rrvipw789盘
-https://www.rrvipw.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_140" tvg-name="爱酷影视" tvg-logo="" group-title="Streaming Hub Top 50",爱酷影视
-https://www.zhanlangbu.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_141" tvg-name="旋风云" tvg-logo="" group-title="Streaming Hub Top 50",旋风云
-http://appimg.ssxmall.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_142" tvg-name="龙腾资源" tvg-logo="" group-title="Streaming Hub Top 50",龙腾资源
-http://175.178.7.35:2020/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_143" tvg-name="奈菲迷" tvg-logo="" group-title="Streaming Hub Top 50",奈菲迷
-https://app.netflixmi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_144" tvg-name="鸭奈飞" tvg-logo="" group-title="Streaming Hub Top 50",鸭奈飞
-http://newtv.yanaifei.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_145" tvg-name="奈飞云" tvg-logo="" group-title="Streaming Hub Top 50",奈飞云
-http://45.125.46.41:4433/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_146" tvg-name="多多资源2" tvg-logo="" group-title="Streaming Hub Top 50",多多资源2
-https://a.7dyu.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_147" tvg-name="思古切片" tvg-logo="" group-title="Streaming Hub Top 50",思古切片
-https://cai.gbxy.net.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_148" tvg-name="Mux切片" tvg-logo="" group-title="Streaming Hub Top 50",Mux切片
-https://muxnb.muxvip.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_149" tvg-name="MuX2" tvg-logo="" group-title="Streaming Hub Top 50",MuX2
-https://video.muxvip.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_150" tvg-name="tujutv土剧TV" tvg-logo="" group-title="Streaming Hub Top 50",tujutv土剧TV
-http://tujutv.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_151" tvg-name="XYUI" tvg-logo="" group-title="Streaming Hub Top 50",XYUI
-http://jx4.xyui.top:7001/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_152" tvg-name="OmoFun" tvg-logo="" group-title="Streaming Hub Top 50",OmoFun
-https://app.omofun.net/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_153" tvg-name="考拉TV" tvg-logo="" group-title="Streaming Hub Top 50",考拉TV
-https://ikaola.tv/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_154" tvg-name="盒子视界" tvg-logo="" group-title="Streaming Hub Top 50",盒子视界
-http://eh.tvzy.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_155" tvg-name="51看剧" tvg-logo="" group-title="Streaming Hub Top 50",51看剧
-http://www.51kanju.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_156" tvg-name="波比影视" tvg-logo="" group-title="Streaming Hub Top 50",波比影视
-http://xxhhsc.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_157" tvg-name="西柚影视" tvg-logo="" group-title="Streaming Hub Top 50",西柚影视
-http://43.135.75.180:9999/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_158" tvg-name="思古影院" tvg-logo="" group-title="Streaming Hub Top 50",思古影院
-https://www.siguyy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_159" tvg-name="畅视影视" tvg-logo="" group-title="Streaming Hub Top 50",畅视影视
-http://app.reboju.net/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_160" tvg-name="影视大全" tvg-logo="" group-title="Streaming Hub Top 50",影视大全
-https://app.okmedcos.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_161" tvg-name="益达影院" tvg-logo="" group-title="Streaming Hub Top 50",益达影院
-http://luobu.yss6080.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_162" tvg-name="vodimg影图" tvg-logo="" group-title="Streaming Hub Top 50",vodimg影图
-https://cj.vodimg.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_163" tvg-name="爱兜视频" tvg-logo="" group-title="Streaming Hub Top 50",爱兜视频
-http://id190.tpddns.cn:81/mogai_api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_164" tvg-name="天诚影视" tvg-logo="" group-title="Streaming Hub Top 50",天诚影视
-http://tcspvip.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_165" tvg-name="瞬间影视" tvg-logo="" group-title="Streaming Hub Top 50",瞬间影视
-http://app.7en7.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_166" tvg-name="氢视频" tvg-logo="" group-title="Streaming Hub Top 50",氢视频
-http://www.h1080p.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_167" tvg-name="雨哥哥影视" tvg-logo="" group-title="Streaming Hub Top 50",雨哥哥影视
-http://cj.baozi66.top:66/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_168" tvg-name="天天影视" tvg-logo="" group-title="Streaming Hub Top 50",天天影视
-http://tt2022.ga/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_169" tvg-name="天天影视2" tvg-logo="" group-title="Streaming Hub Top 50",天天影视2
-http://tttv.cf/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_170" tvg-name="盘看看" tvg-logo="" group-title="Streaming Hub Top 50",盘看看
-http://tvcaiji.pankk.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_171" tvg-name="迪吧" tvg-logo="" group-title="Streaming Hub Top 50",迪吧
-https://www.d8bi.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_172" tvg-name="CV影视" tvg-logo="" group-title="Streaming Hub Top 50",CV影视
-https://www.cccvvv.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_173" tvg-name="创艺影视" tvg-logo="" group-title="Streaming Hub Top 50",创艺影视
-https://www.30dian.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_174" tvg-name="日诚影院" tvg-logo="" group-title="Streaming Hub Top 50",日诚影院
-http://tv.rcz168.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_175" tvg-name="香瓜影视" tvg-logo="" group-title="Streaming Hub Top 50",香瓜影视
-http://v.xgvod.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_176" tvg-name="私人影视" tvg-logo="" group-title="Streaming Hub Top 50",私人影视
-http://204240.top:8899/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_177" tvg-name="火星影视" tvg-logo="" group-title="Streaming Hub Top 50",火星影视
-http://47.102.85.40/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_178" tvg-name="MX影院" tvg-logo="" group-title="Streaming Hub Top 50",MX影院
-http://rctv.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_179" tvg-name="MX影院2" tvg-logo="" group-title="Streaming Hub Top 50",MX影院2
-http://49.235.107.145:81/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_180" tvg-name="4K狗" tvg-logo="" group-title="Streaming Hub Top 50",4K狗
-http://4kdog.tk/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_181" tvg-name="电视家" tvg-logo="" group-title="Streaming Hub Top 50",电视家
-http://mytvhome.xyz/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_182" tvg-name="九狐影视" tvg-logo="" group-title="Streaming Hub Top 50",九狐影视
-http://lb.gbxy.net.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_183" tvg-name="幻风影视" tvg-logo="" group-title="Streaming Hub Top 50",幻风影视
-http://vip857.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_184" tvg-name="白嫖影视" tvg-logo="" group-title="Streaming Hub Top 50",白嫖影视
-http://yingshi.qq120.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_185" tvg-name="影视大全2" tvg-logo="" group-title="Streaming Hub Top 50",影视大全2
-https://xc.xixi2yy.xyz/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_186" tvg-name="baicai小鸟动漫" tvg-logo="" group-title="Streaming Hub Top 50",baicai小鸟动漫
-http://xydm.baicai.buzz/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_187" tvg-name="蜗牛动漫" tvg-logo="" group-title="Streaming Hub Top 50",蜗牛动漫
-http://woniudm.woniu.cyou:20000/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_188" tvg-name="速博影院" tvg-logo="" group-title="Streaming Hub Top 50",速博影院
-http://www.subolg.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_189" tvg-name="蒲公英视频" tvg-logo="" group-title="Streaming Hub Top 50",蒲公英视频
-http://www.pgy1.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_190" tvg-name="铭轩影视" tvg-logo="" group-title="Streaming Hub Top 50",铭轩影视
-http://lz0716.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_191" tvg-name="海玉影视" tvg-logo="" group-title="Streaming Hub Top 50",海玉影视
-http://tv2.hykjtv.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_192" tvg-name="黄河影视" tvg-logo="" group-title="Streaming Hub Top 50",黄河影视
-http://i.ledu8.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_193" tvg-name="百淘影视" tvg-logo="" group-title="Streaming Hub Top 50",百淘影视
-http://ys.58g8.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_194" tvg-name="醉璃笙TV" tvg-logo="" group-title="Streaming Hub Top 50",醉璃笙TV
-http://web.xhdj.vip/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_195" tvg-name="贵宾影院" tvg-logo="" group-title="Streaming Hub Top 50",贵宾影院
-http://vipdytv.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_196" tvg-name="超高清影视" tvg-logo="" group-title="Streaming Hub Top 50",超高清影视
-http://shdmv.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_197" tvg-name="艾思影院" tvg-logo="" group-title="Streaming Hub Top 50",艾思影院
-https://www.aitee.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_198" tvg-name="橘猫影视" tvg-logo="" group-title="Streaming Hub Top 50",橘猫影视
-https://cj.zitv.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_199" tvg-name="比邻影院" tvg-logo="" group-title="Streaming Hub Top 50",比邻影院
-http://0hzy.cn:9990/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_200" tvg-name="千寻时光" tvg-logo="" group-title="Streaming Hub Top 50",千寻时光
-http://wy.dqyhg.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_201" tvg-name="快看客栈" tvg-logo="" group-title="Streaming Hub Top 50",快看客栈
-https://www.vp1127.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_202" tvg-name="胖猫影视" tvg-logo="" group-title="Streaming Hub Top 50",胖猫影视
-https://www.pangmaotv.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_203" tvg-name="海外电影" tvg-logo="" group-title="Streaming Hub Top 50",海外电影
-https://www.200121.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_204" tvg-name="神马云" tvg-logo="" group-title="Streaming Hub Top 50",神马云
-https://api.1080zyku.com/inc/apijson.php/
-#EXTINF:-1 tvg-id="src_205" tvg-name="188云" tvg-logo="" group-title="Streaming Hub Top 50",188云
-https://www.188zy.org/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_206" tvg-name="飞速资源" tvg-logo="" group-title="Streaming Hub Top 50",飞速资源
-https://www.feisuzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_207" tvg-name="海外看" tvg-logo="" group-title="Streaming Hub Top 50",海外看
-http://api.haiwaikan.com/v1/vod/
-#EXTINF:-1 tvg-id="src_208" tvg-name="神速资源" tvg-logo="" group-title="Streaming Hub Top 50",神速资源
-https://api.sszyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_209" tvg-name="想看资源" tvg-logo="" group-title="Streaming Hub Top 50",想看资源
-https://m3u8.xiangkanapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_210" tvg-name="无尽资源2" tvg-logo="" group-title="Streaming Hub Top 50",无尽资源2
-https://wuzy9.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_211" tvg-name="无尽资源" tvg-logo="" group-title="Streaming Hub Top 50",无尽资源
-https://wujinzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_212" tvg-name="banyung搬运工资源" tvg-logo="" group-title="Streaming Hub Top 50",banyung搬运工资源
-https://cj.banyung.xyz/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_213" tvg-name="feisuzyapi飞速资源" tvg-logo="" group-title="Streaming Hub Top 50",feisuzyapi飞速资源
-https://m3u8.feisuzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_214" tvg-name="foxzyFOX采集" tvg-logo="" group-title="Streaming Hub Top 50",foxzyFOX采集
-https://foxzy.net/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_215" tvg-name="fszy1飞速资源2" tvg-logo="" group-title="Streaming Hub Top 50",fszy1飞速资源2
-http://fszy1.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_216" tvg-name="wujinapi无尽" tvg-logo="" group-title="Streaming Hub Top 50",wujinapi无尽
-https://api.wujinapi.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_217" tvg-name="wujinapi无尽资源" tvg-logo="" group-title="Streaming Hub Top 50",wujinapi无尽资源
-https://api.wujinapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_218" tvg-name="ylzy1鱼乐资源" tvg-logo="" group-title="Streaming Hub Top 50",ylzy1鱼乐资源
-https://www.ylzy1.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_219" tvg-name="mbomovie" tvg-logo="" group-title="Streaming Hub Top 50",mbomovie
-https://www.mbomovie.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_220" tvg-name="OmoFun动漫" tvg-logo="" group-title="Streaming Hub Top 50",OmoFun动漫
-https://www.omofun.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_221" tvg-name="w7tv" tvg-logo="" group-title="Streaming Hub Top 50",w7tv
-http://w7tv.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_222" tvg-name="小蜻蜓APP" tvg-logo="" group-title="Streaming Hub Top 50",小蜻蜓APP
-http://3ketv.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_223" tvg-name="追剧吧APP" tvg-logo="" group-title="Streaming Hub Top 50",追剧吧APP
-http://data.zju8.cc:1234/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_224" tvg-name="真不卡" tvg-logo="" group-title="Streaming Hub Top 50",真不卡
-http://db.taijuwang.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_225" tvg-name="饭团影视" tvg-logo="" group-title="Streaming Hub Top 50",饭团影视
-http://fantuan.wkfile.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_226" tvg-name="竹嘎(蓝光解析)" tvg-logo="" group-title="Streaming Hub Top 50",竹嘎(蓝光解析)
-http://m.ycccyk.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_227" tvg-name="爱看啦" tvg-logo="" group-title="Streaming Hub Top 50",爱看啦
-http://v.aik.la/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_228" tvg-name="侦探APP" tvg-logo="" group-title="Streaming Hub Top 50",侦探APP
-http://ys.huangguay.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_229" tvg-name="BL视频" tvg-logo="" group-title="Streaming Hub Top 50",BL视频
-https://bljiex.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_230" tvg-name="淘片资源" tvg-logo="" group-title="Streaming Hub Top 50",淘片资源
-https://taopianzy.com/home/cjapi/c4ca4238a0b923820dcc509a6f75849b/vod/json/
-#EXTINF:-1 tvg-id="src_231" tvg-name="北斗星资源备" tvg-logo="" group-title="Streaming Hub Top 50",北斗星资源备
-https://v8.bdxzyapi.com/inc/api.php/
-#EXTINF:-1 tvg-id="src_232" tvg-name="九九美剧" tvg-logo="" group-title="Streaming Hub Top 50",九九美剧
-https://www.999meiju.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_233" tvg-name="YT影视" tvg-logo="" group-title="Streaming Hub Top 50",YT影视
-http://ytys.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_234" tvg-name="火星2048" tvg-logo="" group-title="Streaming Hub Top 50",火星2048
-https://www.hx2048.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_235" tvg-name="游艺资源" tvg-logo="" group-title="Streaming Hub Top 50",游艺资源
-http://360.hexh.ink/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_236" tvg-name="三零资源" tvg-logo="" group-title="Streaming Hub Top 50",三零资源
-http://api.000zy.com/provide/vod/
-#EXTINF:-1 tvg-id="src_237" tvg-name="萌果资源" tvg-logo="" group-title="Streaming Hub Top 50",萌果资源
-http://api.appearoo.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_238" tvg-name="艾特" tvg-logo="" group-title="Streaming Hub Top 50",艾特
-http://tv.aitesucai.xyz/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_239" tvg-name="8090资源" tvg-logo="" group-title="Streaming Hub Top 50",8090资源
-http://zy.yilans.net:8090/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_240" tvg-name="2A资源" tvg-logo="" group-title="Streaming Hub Top 50",2A资源
-http://zy.zcocc.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_241" tvg-name="清欢Free资源" tvg-logo="" group-title="Streaming Hub Top 50",清欢Free资源
-https://free.qinghuanzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_242" tvg-name="任我云" tvg-logo="" group-title="Streaming Hub Top 50",任我云
-https://www.renwoyun.cn/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_243" tvg-name="7K(虾米)资源" tvg-logo="" group-title="Streaming Hub Top 50",7K(虾米)资源
-https://zy.xmflv.vip/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_244" tvg-name="融兴资源" tvg-logo="" group-title="Streaming Hub Top 50",融兴资源
-https://www.rongxingvr.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_245" tvg-name="无极影院" tvg-logo="" group-title="Streaming Hub Top 50",无极影院
-http://wujiys.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_246" tvg-name="爱看1080" tvg-logo="" group-title="Streaming Hub Top 50",爱看1080
-http://www.ik1080.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_247" tvg-name="KK看剧" tvg-logo="" group-title="Streaming Hub Top 50",KK看剧
-http://www.kkkanju.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_248" tvg-name="蓝果APP" tvg-logo="" group-title="Streaming Hub Top 50",蓝果APP
-http://www.languotv.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_249" tvg-name="飞鱼影视" tvg-logo="" group-title="Streaming Hub Top 50",飞鱼影视
-https://app.feiyu5.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_250" tvg-name="白熊影院" tvg-logo="" group-title="Streaming Hub Top 50",白熊影院
-https://www.bxyy5.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_251" tvg-name="嗨哆咪影视" tvg-logo="" group-title="Streaming Hub Top 50",嗨哆咪影视
-http://hdmys1.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_252" tvg-name="蜂鸟视频" tvg-logo="" group-title="Streaming Hub Top 50",蜂鸟视频
-https://v.fnsp0.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_253" tvg-name="随便看电影" tvg-logo="" group-title="Streaming Hub Top 50",随便看电影
-https://www.sbkdy.com/inc/api.php/
-#EXTINF:-1 tvg-id="src_254" tvg-name="豆瓣资源" tvg-logo="" group-title="Streaming Hub Top 50",豆瓣资源
-http://api.dbyunzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_255" tvg-name="穿梭资源" tvg-logo="" group-title="Streaming Hub Top 50",穿梭资源
-http://ok.888hyk.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_256" tvg-name="U酷资源" tvg-logo="" group-title="Streaming Hub Top 50",U酷资源
-http://ukuzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_257" tvg-name="605资源" tvg-logo="" group-title="Streaming Hub Top 50",605资源
-http://www.605zy.co/inc/api.php/
-#EXTINF:-1 tvg-id="src_258" tvg-name="88资源" tvg-logo="" group-title="Streaming Hub Top 50",88资源
-http://www.88zy.live/inc/api.php/
-#EXTINF:-1 tvg-id="src_259" tvg-name="韩剧资源" tvg-logo="" group-title="Streaming Hub Top 50",韩剧资源
-http://www.hanjuzy.com/inc/api/
-#EXTINF:-1 tvg-id="src_260" tvg-name="干饭影视" tvg-logo="" group-title="Streaming Hub Top 50",干饭影视
-http://124.220.183.81:83/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_261" tvg-name="飘花影院" tvg-logo="" group-title="Streaming Hub Top 50",飘花影院
-http://www.ahjiuman.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_262" tvg-name="热剧天堂TV" tvg-logo="" group-title="Streaming Hub Top 50",热剧天堂TV
-http://175.178.7.35:2020/api.php/Sntv/vod/
-#EXTINF:-1 tvg-id="src_263" tvg-name="6U资源" tvg-logo="" group-title="Streaming Hub Top 50",6U资源
-http://zy.ataoju.com/inc/apijson_vod.php/
-#EXTINF:-1 tvg-id="src_264" tvg-name="极速资源" tvg-logo="" group-title="Streaming Hub Top 50",极速资源
-https://jszyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_265" tvg-name="卧龙资源" tvg-logo="" group-title="Streaming Hub Top 50",卧龙资源
-https://collect.wolongzy.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_266" tvg-name="索尼资源" tvg-logo="" group-title="Streaming Hub Top 50",索尼资源
-https://suoniapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_267" tvg-name="火狐资源" tvg-logo="" group-title="Streaming Hub Top 50",火狐资源
-https://hhzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_268" tvg-name="四圈资源" tvg-logo="" group-title="Streaming Hub Top 50",四圈资源
-https://pg.fenwe078.cf/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_269" tvg-name="最大资源" tvg-logo="" group-title="Streaming Hub Top 50",最大资源
-https://api.zuidapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_270" tvg-name="暴风资源" tvg-logo="" group-title="Streaming Hub Top 50",暴风资源
-https://bfzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_271" tvg-name="快看资源" tvg-logo="" group-title="Streaming Hub Top 50",快看资源
-https://kuaikan-api.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_272" tvg-name="金鹰资源" tvg-logo="" group-title="Streaming Hub Top 50",金鹰资源
-https://jyzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_273" tvg-name="夸克资源" tvg-logo="" group-title="Streaming Hub Top 50",夸克资源
-https://kuakezy1.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_274" tvg-name="鱼乐资源" tvg-logo="" group-title="Streaming Hub Top 50",鱼乐资源
-https://api.ylzy.me/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_275" tvg-name="大漠资源" tvg-logo="" group-title="Streaming Hub Top 50",大漠资源
-https://damozy1.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_276" tvg-name="奇虎资源" tvg-logo="" group-title="Streaming Hub Top 50",奇虎资源
-https://caiji.qhzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_277" tvg-name="360" tvg-logo="" group-title="Streaming Hub Top 50",360
-https://360zy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_278" tvg-name="墨斗" tvg-logo="" group-title="Streaming Hub Top 50",墨斗
-https://www.mdzyapi.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_279" tvg-name="黑木耳" tvg-logo="" group-title="Streaming Hub Top 50",黑木耳
-https://json02.heimuer.xyz/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_280" tvg-name="华为吧" tvg-logo="" group-title="Streaming Hub Top 50",华为吧
-https://hw8.live/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_281" tvg-name="腐剧" tvg-logo="" group-title="Streaming Hub Top 50",腐剧
-http://www.fuju2024.cc:8013/ruifenglb_api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_282" tvg-name="金鹰" tvg-logo="" group-title="Streaming Hub Top 50",金鹰
-https://jinyingzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_283" tvg-name="OK" tvg-logo="" group-title="Streaming Hub Top 50",OK
-https://okzyw9.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_284" tvg-name="宝片" tvg-logo="" group-title="Streaming Hub Top 50",宝片
-https://zpsps.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_285" tvg-name="小黄人" tvg-logo="" group-title="Streaming Hub Top 50",小黄人
-https://iqyi.xiaohuangrentv.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_286" tvg-name="牛牛" tvg-logo="" group-title="Streaming Hub Top 50",牛牛
-https://api.niuniuzy.me/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_287" tvg-name="丫丫" tvg-logo="" group-title="Streaming Hub Top 50",丫丫
-https://cj.yayazy.net/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_288" tvg-name="魔都" tvg-logo="" group-title="Streaming Hub Top 50",魔都
-https://caiji.moduapi.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_289" tvg-name="最大" tvg-logo="" group-title="Streaming Hub Top 50",最大
-http://zuidazy.me/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_290" tvg-name="好色资源|AV" tvg-logo="" group-title="Streaming Hub Top 50",好色资源|AV
-https://haosezyw.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_291" tvg-name="最色资源|AV" tvg-logo="" group-title="Streaming Hub Top 50",最色资源|AV
-https://zszyw.top/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_292" tvg-name="色色虎资源|AV" tvg-logo="" group-title="Streaming Hub Top 50",色色虎资源|AV
-https://apisesehuzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_293" tvg-name="黄瓜资源|AV" tvg-logo="" group-title="Streaming Hub Top 50",黄瓜资源|AV
-https://www.zy018.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_294" tvg-name="玉兔资源|AV" tvg-logo="" group-title="Streaming Hub Top 50",玉兔资源|AV
-https://apiyutu.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_295" tvg-name="麻豆视频|AV" tvg-logo="" group-title="Streaming Hub Top 50",麻豆视频|AV
-http://www.madouse.la/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_296" tvg-name="辣椒资源|AV" tvg-logo="" group-title="Streaming Hub Top 50",辣椒资源|AV
-https://apilj.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_297" tvg-name="甜蜜资源|AV" tvg-logo="" group-title="Streaming Hub Top 50",甜蜜资源|AV
-https://timizy10.cc/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_298" tvg-name="奶香香|AV" tvg-logo="" group-title="Streaming Hub Top 50",奶香香|AV
-https://Naixxzy.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_299" tvg-name="精品资源|AV" tvg-logo="" group-title="Streaming Hub Top 50",精品资源|AV
-https://www.jingpinx.com/api.php/provide/vod/
-#EXTINF:-1 tvg-id="src_300" tvg-name="草榴资源|AV" tvg-logo="" group-title="Streaming Hub Top 50",草榴资源|AV
-https://www.caoliuzyw.com/api.php/prodao/vod/
-#EXTINF:-1 tvg-id="src_301" tvg-name="老色逼资源|AV" tvg-logo="" group-title="Streaming Hub Top 50",老色逼资源|AV
-https://apilsbzy1.com/api.php/provide/vod/
+#EXTINF:-1 tvg-id="151932" tvg-name="毛骨悚然的恋爱 第1集" tvg-logo="https://hongniuzyimage.com/cover/06d6c78905b87df09c70832fb08b8867.jpg" group-title="韩剧",毛骨悚然的恋爱 第1集
+https://hn.bfvvs.com/play/bDkQZZya/index.m3u8
+#EXTINF:-1 tvg-id="151932" tvg-name="毛骨悚然的恋爱 第2集" tvg-logo="https://hongniuzyimage.com/cover/06d6c78905b87df09c70832fb08b8867.jpg" group-title="韩剧",毛骨悚然的恋爱 第2集
+https://hn.bfvvs.com/play/ejR0V4ye/index.m3u8
+#EXTINF:-1 tvg-id="151932" tvg-name="毛骨悚然的恋爱 第3集" tvg-logo="https://hongniuzyimage.com/cover/06d6c78905b87df09c70832fb08b8867.jpg" group-title="韩剧",毛骨悚然的恋爱 第3集
+https://hn.bfvvs.com/play/b82My4oe/index.m3u8
+#EXTINF:-1 tvg-id="151932" tvg-name="毛骨悚然的恋爱 第4集" tvg-logo="https://hongniuzyimage.com/cover/06d6c78905b87df09c70832fb08b8867.jpg" group-title="韩剧",毛骨悚然的恋爱 第4集
+https://hn.bfvvs.com/play/ejR0mYBe/index.m3u8
+#EXTINF:-1 tvg-id="151932" tvg-name="毛骨悚然的恋爱 第5集" tvg-logo="https://hongniuzyimage.com/cover/06d6c78905b87df09c70832fb08b8867.jpg" group-title="韩剧",毛骨悚然的恋爱 第5集
+https://hn.bfvvs.com/play/epYkM12a/index.m3u8
+#EXTINF:-1 tvg-id="151397" tvg-name="清醒点 泰尔先生番外篇 第1集" tvg-logo="https://hongniuzyimage.com/cover/0b8f68b0524ae8ff0623b9e8898208d9.jpg" group-title="泰剧",清醒点 泰尔先生番外篇 第1集
+https://hn.bfvvs.com/play/elY27rMa/index.m3u8
+#EXTINF:-1 tvg-id="151397" tvg-name="清醒点 泰尔先生番外篇 第2集" tvg-logo="https://hongniuzyimage.com/cover/0b8f68b0524ae8ff0623b9e8898208d9.jpg" group-title="泰剧",清醒点 泰尔先生番外篇 第2集
+https://hn.bfvvs.com/play/erkmqp4a/index.m3u8
+#EXTINF:-1 tvg-id="151397" tvg-name="清醒点 泰尔先生番外篇 第3集" tvg-logo="https://hongniuzyimage.com/cover/0b8f68b0524ae8ff0623b9e8898208d9.jpg" group-title="泰剧",清醒点 泰尔先生番外篇 第3集
+https://hn.bfvvs.com/play/aKrLo4ne/index.m3u8
+#EXTINF:-1 tvg-id="151397" tvg-name="清醒点 泰尔先生番外篇 第4集完结" tvg-logo="https://hongniuzyimage.com/cover/0b8f68b0524ae8ff0623b9e8898208d9.jpg" group-title="泰剧",清醒点 泰尔先生番外篇 第4集完结
+https://hn.bfvvs.com/play/eZ6zjMJe/index.m3u8
+#EXTINF:-1 tvg-id="138180" tvg-name="偿还 第01集" tvg-logo="https://img.lzipic.com/upload/vod/20260531-1/797c5789c0536a3104c8364e464e40a4.webp" group-title="泰国剧",偿还 第01集
+https://v.lzcdn27.com/20260531/11185_2368927e/index.m3u8
+#EXTINF:-1 tvg-id="138180" tvg-name="偿还 第02集" tvg-logo="https://img.lzipic.com/upload/vod/20260531-1/797c5789c0536a3104c8364e464e40a4.webp" group-title="泰国剧",偿还 第02集
+https://v.lzcdn31.com/20260607/6923_b8e86649/index.m3u8
+#EXTINF:-1 tvg-id="138180" tvg-name="偿还 第03集" tvg-logo="https://img.lzipic.com/upload/vod/20260531-1/797c5789c0536a3104c8364e464e40a4.webp" group-title="泰国剧",偿还 第03集
+https://v.lzcdn31.com/20260614/7151_e37425ab/index.m3u8
+#EXTINF:-1 tvg-id="138180" tvg-name="偿还 第04集" tvg-logo="https://img.lzipic.com/upload/vod/20260531-1/797c5789c0536a3104c8364e464e40a4.webp" group-title="泰国剧",偿还 第04集
+https://v.lzcdn27.com/20260621/11942_f5d6c744/index.m3u8
+#EXTINF:-1 tvg-id="138180" tvg-name="偿还 第05集" tvg-logo="https://img.lzipic.com/upload/vod/20260531-1/797c5789c0536a3104c8364e464e40a4.webp" group-title="泰国剧",偿还 第05集
+https://v.lzcdn27.com/20260628/12226_ce5fe7ee/index.m3u8
+#EXTINF:-1 tvg-id="138180" tvg-name="偿还 第06集" tvg-logo="https://img.lzipic.com/upload/vod/20260531-1/797c5789c0536a3104c8364e464e40a4.webp" group-title="泰国剧",偿还 第06集
+https://v.lzcdn27.com/20260705/12649_93d1c2cc/index.m3u8
+#EXTINF:-1 tvg-id="138180" tvg-name="偿还 第07集" tvg-logo="https://img.lzipic.com/upload/vod/20260531-1/797c5789c0536a3104c8364e464e40a4.webp" group-title="泰国剧",偿还 第07集
+https://v.lfthirtytwo.com/20260711/8560_692fc878/index.m3u8
+#EXTINF:-1 tvg-id="138180" tvg-name="偿还 第08集" tvg-logo="https://img.lzipic.com/upload/vod/20260531-1/797c5789c0536a3104c8364e464e40a4.webp" group-title="泰国剧",偿还 第08集
+https://v.lfthirtytwo.com/20260718/8754_c9ce8c1b/index.m3u8
+#EXTINF:-1 tvg-id="138180" tvg-name="偿还 第09集" tvg-logo="https://img.lzipic.com/upload/vod/20260531-1/797c5789c0536a3104c8364e464e40a4.webp" group-title="泰国剧",偿还 第09集
+https://v.lfthirtytwo.com/20260725/8962_1008bf8b/index.m3u8
+#EXTINF:-1 tvg-id="138180" tvg-name="偿还 第10集" tvg-logo="https://img.lzipic.com/upload/vod/20260531-1/797c5789c0536a3104c8364e464e40a4.webp" group-title="泰国剧",偿还 第10集
+https://v.lfthirtytwo.com/20260801/9187_fb6ca50e/index.m3u8
+#EXTINF:-1 tvg-id="149468" tvg-name="你的天空～晴转恋～ 第01集" tvg-logo="https://img.lzipic.com/upload/vod/20260802-1/754deff573059827a71947a4f43ef989.webp" group-title="日本剧",你的天空～晴转恋～ 第01集
+https://v.lfthirtytwo.com/20260801/9188_f5dd1c48/index.m3u8
+#EXTINF:-1 tvg-id="142293" tvg-name="等待黎明破晓时 第01集" tvg-logo="https://img.lzipic.com/upload/vod/20260621-1/65133a82509b383d94c0ba26bf5d0b95.webp" group-title="泰国剧",等待黎明破晓时 第01集
+https://v.lzcdn27.com/20260621/11929_d6e4c5cf/index.m3u8
+#EXTINF:-1 tvg-id="142293" tvg-name="等待黎明破晓时 第02集" tvg-logo="https://img.lzipic.com/upload/vod/20260621-1/65133a82509b383d94c0ba26bf5d0b95.webp" group-title="泰国剧",等待黎明破晓时 第02集
+https://v.lzcdn27.com/20260628/12218_6224d1d8/index.m3u8
+#EXTINF:-1 tvg-id="142293" tvg-name="等待黎明破晓时 第03集" tvg-logo="https://img.lzipic.com/upload/vod/20260621-1/65133a82509b383d94c0ba26bf5d0b95.webp" group-title="泰国剧",等待黎明破晓时 第03集
+https://v.lzcdn27.com/20260705/12650_8bbdcaa0/index.m3u8
+#EXTINF:-1 tvg-id="142293" tvg-name="等待黎明破晓时 第04集" tvg-logo="https://img.lzipic.com/upload/vod/20260621-1/65133a82509b383d94c0ba26bf5d0b95.webp" group-title="泰国剧",等待黎明破晓时 第04集
+https://v.lfthirtytwo.com/20260711/8557_29a00739/index.m3u8
+#EXTINF:-1 tvg-id="142293" tvg-name="等待黎明破晓时 第05集" tvg-logo="https://img.lzipic.com/upload/vod/20260621-1/65133a82509b383d94c0ba26bf5d0b95.webp" group-title="泰国剧",等待黎明破晓时 第05集
+https://v.lfthirtytwo.com/20260718/8750_557a8c7a/index.m3u8
+#EXTINF:-1 tvg-id="142293" tvg-name="等待黎明破晓时 第06集" tvg-logo="https://img.lzipic.com/upload/vod/20260621-1/65133a82509b383d94c0ba26bf5d0b95.webp" group-title="泰国剧",等待黎明破晓时 第06集
+https://v.lfthirtytwo.com/20260725/8955_8d26b53a/index.m3u8
+#EXTINF:-1 tvg-id="142293" tvg-name="等待黎明破晓时 第07集" tvg-logo="https://img.lzipic.com/upload/vod/20260621-1/65133a82509b383d94c0ba26bf5d0b95.webp" group-title="泰国剧",等待黎明破晓时 第07集
+https://v.lfthirtytwo.com/20260801/9189_d7055514/index.m3u8
+#EXTINF:-1 tvg-id="145564" tvg-name="四大元素之火之爱链 第01集" tvg-logo="https://img.lzipic.com/upload/vod/20260712-1/a4d1522d798f47f99b8b1ea1ef125125.webp" group-title="泰国剧",四大元素之火之爱链 第01集
+https://v.lfthirtytwo.com/20260711/8565_9bbbe4c1/index.m3u8
+#EXTINF:-1 tvg-id="145564" tvg-name="四大元素之火之爱链 第02集" tvg-logo="https://img.lzipic.com/upload/vod/20260712-1/a4d1522d798f47f99b8b1ea1ef125125.webp" group-title="泰国剧",四大元素之火之爱链 第02集
+https://v.lfthirtytwo.com/20260718/8748_85ddcd27/index.m3u8
+#EXTINF:-1 tvg-id="281176" tvg-name="裸体喝圣水：M-Men 享受 84 个荡妇的尿液 5 小时 最佳  犬-妄想族 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/9a9b9daaae0f04dd355ec9dd5ca7d247.jpg" group-title="东南亚AV",裸体喝圣水：M-Men 享受 84 个荡妇的尿液 5 小时 最佳  犬-妄想族 在线播放
+https://2607.senlin2026.com/20260731/kKVCgPHm/index.m3u8
+#EXTINF:-1 tvg-id="281175" tvg-name="堕落黑心兼职的家庭主妇～为了报酬连中出性爱都愿意做！！为了零用钱，偷偷瞒着老公的主妇陷入兼  センタービレッジ 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/c34bdf9ffbf72fa713f8ac238e18a8f9.jpg" group-title="女优系列",堕落黑心兼职的家庭主妇～为了报酬连中出性爱都愿意做！！为了零用钱，偷偷瞒着老公的主妇陷入兼  センタービレッジ 在线播放
+https://2607.senlin2026.com/20260731/a5jGZpYX/index.m3u8
+#EXTINF:-1 tvg-id="281174" tvg-name="泡妞素人明星老婆：下午的家庭主妇，是个郁闷的婊子！ ！ 4小时  えろだるま-エマニエル 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/5ab9a8a0bf91cb6b2f6b882f935626d5.jpg" group-title="口交颜射",泡妞素人明星老婆：下午的家庭主妇，是个郁闷的婊子！ ！ 4小时  えろだるま-エマニエル 在线播放
+https://2607.senlin2026.com/20260731/KNGwzXOm/index.m3u8
+#EXTINF:-1 tvg-id="281173" tvg-name="秘密隐藏自拍影片外流！！中年大叔偷拍的中高年浓密交尾6  プリモ 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/b1782d0e326adab7541234047be6aa67.jpg" group-title="女优系列",秘密隐藏自拍影片外流！！中年大叔偷拍的中高年浓密交尾6  プリモ 在线播放
+https://2607.senlin2026.com/20260731/CCNYS8uU/index.m3u8
+#EXTINF:-1 tvg-id="281172" tvg-name="露脸MM范 魔镜 大学情侣专属NTR计画 两位巨乳女大学生在露天下首次体验滑溜溜的两轮泡泡浴！在  ディープス 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/cd6cda2289166f44fa867d7ac9bdda40.jpg" group-title="萝莉少女",露脸MM范 魔镜 大学情侣专属NTR计画 两位巨乳女大学生在露天下首次体验滑溜溜的两轮泡泡浴！在  ディープス 在线播放
+https://2607.senlin2026.com/20260731/OTCf7CDm/index.m3u8
+#EXTINF:-1 tvg-id="281171" tvg-name="可爱的中年妇女在苗条男子的猛烈冲击下痛苦地扭动，12 人，4 小时最佳（4）  STUDIO Is-妄想族 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/d09b87c0309c1413914627ffd9b1ebc8.jpg" group-title="制服丝袜",可爱的中年妇女在苗条男子的猛烈冲击下痛苦地扭动，12 人，4 小时最佳（4）  STUDIO Is-妄想族 在线播放
+https://2607.senlin2026.com/20260731/ty5Os0BQ/index.m3u8
+#EXTINF:-1 tvg-id="281170" tvg-name="东京银座OL界最强巨乳，惊人身材的素人初次AV出道 小椋光 小椋ひかり E-BODY 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/08d48346d57c2118b06ef7483be5c928.jpg" group-title="日本精品",东京银座OL界最强巨乳，惊人身材的素人初次AV出道 小椋光 小椋ひかり E-BODY 在线播放
+https://2607.senlin2026.com/20260731/TQOJgWiT/index.m3u8
+#EXTINF:-1 tvg-id="281169" tvg-name="每周一三五舔右乳头二四六舔左乳头周日舔两侧乳头的社会人1年目 羽月乃苍 羽月乃蒼 電脳ラスプーチン 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/85128be3c81f2efba7392a3719abd8a2.jpg" group-title="日本精品",每周一三五舔右乳头二四六舔左乳头周日舔两侧乳头的社会人1年目 羽月乃苍 羽月乃蒼 電脳ラスプーチン 在线播放
+https://2607.senlin2026.com/20260731/i3Gx3aAI/index.m3u8
+#EXTINF:-1 tvg-id="281168" tvg-name="平凡男女监看AV 巨臀女大学生挑战1cm10000日元特粗假阳具插入到极限！她无法抗拒假阳具逐渐  ディープス 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/09e410b5c6b68f41f31c6085dfd72f2a.jpg" group-title="萝莉少女",平凡男女监看AV 巨臀女大学生挑战1cm10000日元特粗假阳具插入到极限！她无法抗拒假阳具逐渐  ディープス 在线播放
+https://2607.senlin2026.com/20260731/FvQSFPcz/index.m3u8
+#EXTINF:-1 tvg-id="281167" tvg-name="逆向美容院（秘密）拍摄  ダマちゃん。 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/0b53f9c61bbc13e7fdf3754bd1be549d.jpg" group-title="女优系列",逆向美容院（秘密）拍摄  ダマちゃん。 在线播放
+https://2607.senlin2026.com/20260731/21rWLr0b/index.m3u8
+#EXTINF:-1 tvg-id="281166" tvg-name="隔壁的女士身材性感，乳房暴露，所以我决定尝试勾引她，但事情比我想像的更色情…！ ！ 4 小时  泥棒猫-エマニエル 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/2cae8292053dd4753d8f70160c748785.jpg" group-title="萝莉少女",隔壁的女士身材性感，乳房暴露，所以我决定尝试勾引她，但事情比我想像的更色情…！ ！ 4 小时  泥棒猫-エマニエル 在线播放
+https://2607.senlin2026.com/20260731/2jivlhhY/index.m3u8
+#EXTINF:-1 tvg-id="281165" tvg-name="美熟女用自慰袖子给你打飞机+辱骂的超级女神服务！ 4 小时  えろだるま-エマニエル 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/a071dc3c33db87b1b021c2ed21752846.jpg" group-title="制服丝袜",美熟女用自慰袖子给你打飞机+辱骂的超级女神服务！ 4 小时  えろだるま-エマニエル 在线播放
+https://2607.senlin2026.com/20260731/yP4K9Mas/index.m3u8
+#EXTINF:-1 tvg-id="281164" tvg-name="普通男女监控AV：魔镜另一边有超多男顾客！一位丰满，大胸部的身体磨砂女士！你能帮我帮常客撸管吗，  ディープス 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/085c7d73ba1020f4aaeadcfce8bdce86.jpg" group-title="制服丝袜",普通男女监控AV：魔镜另一边有超多男顾客！一位丰满，大胸部的身体磨砂女士！你能帮我帮常客撸管吗，  ディープス 在线播放
+https://2607.senlin2026.com/20260731/UpyEJDF2/index.m3u8
+#EXTINF:-1 tvg-id="281163" tvg-name="对白皙大屁股的家事代工阿姨马上插入！变成大肉棒的俘虏的人妻，第二天自己来找 森沢かな（飯岡かなこ） ディープス 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/63fff4edc87280fdbb2764c44d129424.jpg" group-title="人妻熟女",对白皙大屁股的家事代工阿姨马上插入！变成大肉棒的俘虏的人妻，第二天自己来找 森沢かな（飯岡かなこ） ディープス 在线播放
+https://2607.senlin2026.com/20260731/hi3LZMKW/index.m3u8
+#EXTINF:-1 tvg-id="281162" tvg-name="青春期女孩因为一根鸡鸡而疯狂！不断挤奶，直到球空了。淫荡女教师精选。 美谷朱里 美園和花 五日市芽依等演员 ダスッ！ 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/81303b0ca977039913bb3eaed05747d5.jpg" group-title="萝莉少女",青春期女孩因为一根鸡鸡而疯狂！不断挤奶，直到球空了。淫荡女教师精选。 美谷朱里 美園和花 五日市芽依等演员 ダスッ！ 在线播放
+https://2607.senlin2026.com/20260731/G0G5lEid/index.m3u8
+#EXTINF:-1 tvg-id="281161" tvg-name="陪同学旅馆干炮过夜 17 一般男女问卷AV  ディープス 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/257f4744671f0466a3f8c422610bc47b.jpg" group-title="口交颜射",陪同学旅馆干炮过夜 17 一般男女问卷AV  ディープス 在线播放
+https://2607.senlin2026.com/20260731/qH7We6V2/index.m3u8
+#EXTINF:-1 tvg-id="281160" tvg-name="欢迎来到我们的秘密天堂。我的阴茎，我的乳头，我的一切都被玩弄 森沢かな 橘メアリー 黒川すみれ等演员 ダスッ！ 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/3b88df5a97570428e632e3e793139010.jpg" group-title="口交颜射",欢迎来到我们的秘密天堂。我的阴茎，我的乳头，我的一切都被玩弄 森沢かな 橘メアリー 黒川すみれ等演员 ダスッ！ 在线播放
+https://2607.senlin2026.com/20260731/cDv2CW7I/index.m3u8
+#EXTINF:-1 tvg-id="281159" tvg-name="露脸MM范女大学生专属魔镜互相脱光衣服至全裸！蓝天下滑溜溜的乳液相扑！如果你输了，你就得在你最好  ディープス 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/87585eb1c5d14006622a59d0111ad497.jpg" group-title="萝莉少女",露脸MM范女大学生专属魔镜互相脱光衣服至全裸！蓝天下滑溜溜的乳液相扑！如果你输了，你就得在你最好  ディープス 在线播放
+https://2607.senlin2026.com/20260731/vZzT2Y90/index.m3u8
+#EXTINF:-1 tvg-id="281158" tvg-name="没有男友独居女的性欲突破极限！！要求性交的身体诱惑访客，想发泄谁都可以！ 黒木れいな 乃木絢愛 若宮はずき DOC 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/bc1c4ace853960e59adf9aa78411e39c.jpg" group-title="制服丝袜",没有男友独居女的性欲突破极限！！要求性交的身体诱惑访客，想发泄谁都可以！ 黒木れいな 乃木絢愛 若宮はずき DOC 在线播放
+https://2607.senlin2026.com/20260731/Uxl3Ek1I/index.m3u8
+#EXTINF:-1 tvg-id="281157" tvg-name="反向兔子花痴女教师最佳 - 用追逐活塞冲击将学校问题儿童的精液榨出 小花のん 黒川すみれ 橘メアリー ダスッ！ 在线播放" tvg-logo="https://op2.sl260630.top/upload/vod/20260801-1/1d81f6adfe610580cd4216449340c48f.jpg" group-title="制服丝袜",反向兔子花痴女教师最佳 - 用追逐活塞冲击将学校问题儿童的精液榨出 小花のん 黒川すみれ 橘メアリー ダスッ！ 在线播放
+https://2607.senlin2026.com/20260731/jM9c4kSm/index.m3u8
