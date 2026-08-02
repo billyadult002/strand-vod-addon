@@ -214,6 +214,22 @@ app.get(['/sources.json', '/api/sources.json', '/api/sources'], (req, res) => {
   res.json(vodSources);
 });
 
+// UNIVERSAL FALLBACK: Catch-all unhandled routes and serve M3U8 Playlist
+app.use((req, res, next) => {
+  if (res.headersSent) return next();
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.setHeader('Content-Type', 'application/vnd.apple.mpegurl; charset=utf-8');
+  let m3u = '#EXTM3U\n';
+  vodSources.forEach((src) => {
+    m3u += `#EXTINF:-1 group-title="中文VOD影视源", ${src.name}\n${src.api}\n`;
+  });
+  top50Hub.forEach((site) => {
+    m3u += `#EXTINF:-1 group-title="StreamingSitesHub Top 50", #${site.rank} ${site.name}\n${site.url}\n`;
+  });
+  res.send(m3u);
+});
+
 if (require.main === module) {
   app.listen(PORT, () => {
     const localIp = getLocalIp();
