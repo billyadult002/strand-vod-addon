@@ -13,7 +13,7 @@ try {
 const app = express();
 app.use(cors());
 
-// Universal Playlist generator with bulletproof try/catch
+// Universal Playlist generator
 const sendPlaylist = (req, res) => {
   try {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -37,25 +37,6 @@ const sendPlaylist = (req, res) => {
     return res.status(200).send('#EXTM3U\n#EXTINF:-1, Billy VOD Addon\nhttps://strand-vod-billy.vercel.app/manifest.json\n');
   }
 };
-
-// TOP-LEVEL INTERCEPTOR: Catch ALL playlist requests & non-API routes FIRST
-app.use((req, res, next) => {
-  const url = (req.url || '').toLowerCase();
-  const isApiJson = (
-    url.includes('manifest') ||
-    url.includes('top50') ||
-    url.includes('tvbox') ||
-    url.includes('sources') ||
-    url.includes('catalog') ||
-    url.includes('meta') ||
-    url.includes('stream')
-  );
-
-  if (!isApiJson || url.includes('m3u') || url.includes('playlist') || url.includes('live') || url.includes('tv') || url.includes('channels')) {
-    return sendPlaylist(req, res);
-  }
-  next();
-});
 
 // 1. Manifest
 app.all(['/manifest.json', '/billy-manifest.json', '/api/manifest.json', '/api/manifest', '/api/billy-manifest.json'], (req, res) => {
@@ -146,7 +127,23 @@ app.all(['/stream/:type/:id.json', '/api/stream/:type/:id.json'], async (req, re
   }
 });
 
-// Fallback all other GET requests to playlist M3U8
-app.use(sendPlaylist);
+// 8. Playlists explicit & fallback
+app.all([
+  '/',
+  '/playlist',
+  '/playlist.m3u',
+  '/playlist.m3u8',
+  '/live.m3u8',
+  '/tv.m3u8',
+  '/channels.m3u8',
+  '/api',
+  '/api/',
+  '/api/playlist',
+  '/api/playlist.m3u',
+  '/api/playlist.m3u8',
+  '/api/live.m3u8',
+  '/api/tv.m3u8',
+  '*'
+], sendPlaylist);
 
 module.exports = app;
