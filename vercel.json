@@ -17,6 +17,22 @@
       "dest": "/api/playlist.js"
     },
     {
+      "src": "/playlist.m3u8",
+      "dest": "/api/playlist.js"
+    },
+    {
+      "src": "/live.m3u8",
+      "dest": "/api/playlist.js"
+    },
+    {
+      "src": "/tv.m3u8",
+      "dest": "/api/playlist.js"
+    },
+    {
+      "src": "/channels.m3u8",
+      "dest": "/api/playlist.js"
+    },
+    {
       "src": "/sources.json",
       "dest": "/api/sources.js"
     },

@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
   const protocol = req.protocol;
   const manifestUrl = `${protocol}://${host}/manifest.json`;
   const stremioUrl = manifestUrl.replace(/^http/, 'stremio');
-  const playlistUrl = `${protocol}://${host}/playlist.m3u`;
+  const playlistUrl = `${protocol}://${host}/playlist.m3u8`;
   const tvboxUrl = `${protocol}://${host}/tvbox.json`;
   const top50Url = `${protocol}://${host}/top50.json`;
 
@@ -58,15 +58,15 @@ app.get('/', (req, res) => {
     </head>
     <body>
       <div class="card">
-        <h1>Apple TV Strand / Stremio 影视 Addon (v2.0)</h1>
+        <h1>Apple TV Strand / Stremio 影视 Addon (v2.1)</h1>
         <div class="badge">已合并去重 ${vodSources.length} 个中文 VOD 接口</div>
         <div class="badge" style="background: #10b981;">已打包 StreamingSitesHub 前 ${top50Hub.length} 精选免费站点</div>
-        <p>本 Addon 完美支持 Apple TV Strand App、SenPlayer、VidHub、Stremio 等多种播放器。</p>
+        <p>本 Addon 完美支持 Apple TV Strand App、SenPlayer、VidHub、Infuse、Stremio 等多种播放器。</p>
         
         <h3>1. Strand App / Stremio 专用 Addon 链接 (Manifest URL)：</h3>
         <div class="url-box">${manifestUrl}</div>
 
-        <h3>2. SenPlayer / VidHub / Infuse (M3U 订阅 URL)：</h3>
+        <h3>2. SenPlayer / VidHub / Infuse (M3U8 订阅 URL)：</h3>
         <div class="url-box">${playlistUrl}</div>
 
         <h3>3. TVBox / CatVod 接口 URL：</h3>
@@ -95,22 +95,21 @@ app.get('/', (req, res) => {
 });
 
 // Stremio Addon manifest
-app.get('/manifest.json', (req, res) => {
+app.get(['/manifest.json', '/billy-manifest.json'], (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.json(manifest);
 });
 
 // StreamingSitesHub Top 50 JSON route
-app.get('/top50.json', (req, res) => {
+app.get(['/top50.json', '/top50'], (req, res) => {
   res.json(top50Hub);
 });
 
-app.get('/top50', (req, res) => {
-  res.json(top50Hub);
-});
-
-// M3U Playlist route for SenPlayer / Infuse / VidHub
-app.get('/playlist.m3u', (req, res) => {
-  res.setHeader('Content-Type', 'audio/x-mpegurl');
+// M3U & M3U8 Playlist route for SenPlayer / Infuse / VidHub
+app.get(['/playlist.m3u8', '/playlist.m3u', '/live.m3u8', '/tv.m3u8', '/channels.m3u8'], (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.setHeader('Content-Type', 'application/vnd.apple.mpegurl; charset=utf-8');
   let m3u = '#EXTM3U\n';
   vodSources.forEach((src) => {
     m3u += `#EXTINF:-1 group-title="中文VOD影视源", ${src.name}\n${src.api}\n`;
@@ -140,7 +139,7 @@ app.get('/tvbox.json', (req, res) => {
 app.get('/catalog/:type/:id.json', async (req, res) => {
   try {
     const type = req.params.type || 'movie';
-    const id = req.params.id || 'maccms_movie';
+    const id = req.params.id || 'billy_maccms_movie';
     const result = await handleCatalog(type, id);
     res.json(result);
   } catch (e) {
@@ -151,7 +150,7 @@ app.get('/catalog/:type/:id.json', async (req, res) => {
 app.get('/catalog/:type/:id/:extra.json', async (req, res) => {
   try {
     const type = req.params.type || 'movie';
-    const id = req.params.id || 'maccms_movie';
+    const id = req.params.id || 'billy_maccms_movie';
     const extraStr = req.params.extra || '';
     const extraParams = {};
     if (extraStr.includes('search=')) {
@@ -195,7 +194,7 @@ app.listen(PORT, () => {
   console.log(`\n==================================================`);
   console.log(`🚀 VOD & Top50 Addon Server running!`);
   console.log(`📺 Manifest URL:       http://${localIp}:${PORT}/manifest.json`);
-  console.log(`📺 SenPlayer M3U URL:   http://${localIp}:${PORT}/playlist.m3u`);
+  console.log(`📺 SenPlayer M3U8 URL: http://${localIp}:${PORT}/playlist.m3u8`);
   console.log(`==================================================\n`);
 });
 

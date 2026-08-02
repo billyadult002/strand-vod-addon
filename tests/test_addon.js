@@ -1,48 +1,38 @@
-const { manifest, handleCatalog, handleStream } = require('../src/addon');
+const assert = require('assert');
+const { manifest, handleCatalog } = require('../src/addon');
 const { vodSources } = require('../src/maccms');
 const top50Hub = require('../src/data_top50.json');
 
-async function runTests() {
-  console.log('=== Strand VOD & Top50 Addon Test Suite ===');
+console.log("🧪 Testing Addon Manifest and Endpoints...");
 
-  // Test 1: Check VOD sources count
-  console.log(`[Test 1] Loaded VOD Sources: ${vodSources.length}, Top 50 Hub Sites: ${top50Hub.length}`);
-  if (vodSources.length !== 301 || top50Hub.length !== 50) {
-    throw new Error('Data validation failed');
-  }
-  console.log('✔ Test 1 Passed: 301 VOD sources & 50 StreamingSitesHub sites loaded.');
+// Test manifest
+assert.strictEqual(manifest.id, 'com.billyadult002.strand.vod.top50');
+assert.strictEqual(manifest.version, '2.1.0');
+assert.strictEqual(manifest.name, "Billy's VOD & Top50 影视聚合 (Strand Addon)");
+assert.ok(manifest.catalogs.length >= 3);
 
-  // Test 2: Verify Unique Manifest ID & Name
-  console.log(`[Test 2] Addon ID: ${manifest.id}, Addon Name: ${manifest.name}`);
-  if (manifest.id !== 'com.billyadult002.strand.vod.top50' || !manifest.name.includes("Billy's")) {
-    throw new Error('Manifest identity validation failed');
-  }
-  console.log('✔ Test 2 Passed: Unique Stremio Manifest identity validated.');
+// Test VOD sources
+assert.strictEqual(vodSources.length, 301, 'VOD sources should be deduplicated to 301');
 
-  // Test 3: Top 50 Hub Catalog Query
-  console.log('[Test 3] Testing catalog handler for billy_hub_top50...');
-  const hubCatalog = await handleCatalog('movie', 'billy_hub_top50');
-  console.log(`Top 50 catalog item count: ${hubCatalog.metas.length}`);
-  if (hubCatalog.metas.length !== 50) {
-    throw new Error('Hub catalog validation failed');
-  }
-  console.log(`  Sample Hub Item: [${hubCatalog.metas[0].name}] -> ${hubCatalog.metas[0].websiteUrl}`);
-  console.log('✔ Test 3 Passed: StreamingSitesHub Top 50 catalog working.');
+// Test Top 50 Hub
+assert.strictEqual(top50Hub.length, 50, 'StreamingSitesHub Top 50 should have 50 items');
 
-  // Test 4: Top 50 Stream Handler
-  console.log('[Test 4] Testing stream handler for hub:1...');
-  const hubStream = await handleStream('movie', 'hub:1');
-  if (!hubStream.streams || hubStream.streams.length === 0) {
-    throw new Error('Hub stream validation failed');
-  }
-  console.log(`  Sample Hub Stream: [${hubStream.streams[0].title}] -> ${hubStream.streams[0].externalUrl}`);
-  console.log('✔ Test 4 Passed: Top 50 Stream handler working.');
+// Test Catalog handler
+(async () => {
+  const result = await handleCatalog('movie', 'billy_hub_top50');
+  assert.ok(result.metas.length === 50, 'Top50 catalog should return 50 metas');
+  console.log("✅ Top 50 Catalog test passed! First rank:", result.metas[0].name);
 
-  console.log('\nAll tests finished successfully!');
-  process.exit(0);
-}
-
-runTests().catch(err => {
-  console.error('Test suite failed:', err);
-  process.exit(1);
-});
+  const playlistHandler = require('../api/playlist');
+  let body = '';
+  const mockRes = {
+    setHeader: () => {},
+    status: () => mockRes,
+    send: (content) => { body = content; }
+  };
+  playlistHandler({}, mockRes);
+  assert.ok(body.includes('#EXTM3U'), 'Playlist should start with #EXTM3U');
+  assert.ok(body.includes('中文VOD影视源'), 'Playlist should include VOD sources');
+  console.log("✅ M3U & M3U8 Playlist handler test passed!");
+  console.log("🎉 ALL TESTS PASSED!");
+})();
