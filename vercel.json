@@ -1,17 +1,5 @@
 {
-  "rewrites": [
-    { "source": "/manifest.json", "destination": "/api/index?path=manifest.json" },
-    { "source": "/billy-manifest.json", "destination": "/api/index?path=billy-manifest.json" },
-    { "source": "/playlist.m3u8", "destination": "/api/index?path=playlist.m3u8" },
-    { "source": "/playlist.m3u", "destination": "/api/index?path=playlist.m3u" },
-    { "source": "/live.m3u8", "destination": "/api/index?path=live.m3u8" },
-    { "source": "/tv.m3u8", "destination": "/api/index?path=tv.m3u8" },
-    { "source": "/channels.m3u8", "destination": "/api/index?path=channels.m3u8" },
-    { "source": "/top50.json", "destination": "/api/index?path=top50.json" },
-    { "source": "/tvbox.json", "destination": "/api/index?path=tvbox.json" },
-    { "source": "/sources.json", "destination": "/api/index?path=sources.json" },
-    { "source": "/catalog/(.*)", "destination": "/api/index?path=catalog/$1" },
-    { "source": "/meta/(.*)", "destination": "/api/index?path=meta/$1" },
-    { "source": "/stream/(.*)", "destination": "/api/index?path=stream/$1" }
+  "routes": [
+    { "src": "/(.*)", "dest": "/api/index.js" }
   ]
 }
