@@ -5,6 +5,10 @@
       "dest": "/api/manifest.js"
     },
     {
+      "src": "/billy-manifest.json",
+      "dest": "/api/billy-manifest.js"
+    },
+    {
       "src": "/top50.json",
       "dest": "/api/top50.js"
     },
